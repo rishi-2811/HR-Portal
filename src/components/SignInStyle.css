@@ -1,0 +1,119 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(69deg, #DCE5F2 4.49%, #F1F4F9 98.4%);
+}
+
+.centered-box {
+    width: 55%;
+    height: 80%;
+    border-radius: 8px;
+    background: linear-gradient(0deg, #E6EEF8 0%, #E6EEF8 100%), #CFD8DC;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+.centered-box-top-part{
+    width:100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #082777;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
+}
+.centered-box-bottom-part{
+    display: flex;
+    margin-top: 50px;
+    height:90%;
+    width:100%;
+}
+.centered-box-line{
+    width:3px;
+    height:70%;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+background: #D3E2F4;
+margin-left: 30px;
+}
+.centered-box-part-2-loginSignup{
+    display: flex;
+   
+    margin-left: 110px;
+}
+.centered-box-part-2-login_signup{
+    color: #4B93E7;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+.centered-box-part-2-signup_signup{
+color: #4B93E7;
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-decoration: underline;
+text-decoration-color: #F7AC25;
+}
+
+.form-container_signup form{
+    background: #E6EEF8;
+}
+
+.form-container_signup input {
+     border: 1px solid #4B93E7;
+    width: 333px;
+    height: 38px;
+    flex-shrink: 0;
+    background: #DDEAFB;
+    border-radius: 8px;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+
+.form-container_signup input::placeholder{
+    color: #082777;
+    padding-left:10px;
+}
+
+.signin_button{
+    margin-top: 35px;
+    margin-left: 25px;
+    box-sizing: border-box;
+    border: 0px;
+    background: #F7AC25;
+    border-radius: 8px;
+    width: 333px;
+height: 38px;
+color: white;
+font-size: 16px;
+}
+
+.centered-box-checkboxes{
+    margin-left: 125px;
+    margin-top: 10px;
+}
+Link{
+    color: white;
+}
+
+
+

@@ -1,0 +1,84 @@
+.reallocation {
+  background: #e3eefe;
+  width: 1488px;
+  height: 740px;
+}
+.complains_navbar {
+  width: 1488px;
+  height: 55px;
+  background-color: white;
+  box-shadow: 0px 4px 20px 0px rgba(91, 91, 91, 0.13);
+}
+.reallocation-box {
+  margin-top: 40px;
+  margin-left: 2.5%;
+  width: 92%;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f3f8ff;
+}
+.reallocation-username-email {
+  margin-left: 15px;
+  width: 30%;
+}
+.reallocation-username {
+  font-size: 20px;
+  font-weight: 500;
+}
+.reallocation-email {
+  color: gray;
+}
+.reallocation-break {
+  width: 6px;
+  height: 75px;
+  background-color: #e3eefe;
+  border-radius: 8px;
+}
+.reallocation-destinations {
+  display: flex;
+  width: 25%;
+  padding: 25px;
+  margin-left: 40px;
+  align-items: center;
+}
+.destination {
+  color: gray;
+}
+.reallocation-symboll {
+  margin-left: 20px;
+}
+.reallocation-circle {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reallocation-arrows {
+  transform: translate(70%, -150%);
+}
+.reallocation-destination {
+  margin-left: 50px;
+}
+.reallocation-accept-button,
+.reallocation-reject-button {
+  margin-left: 70px;
+}
+.reallocation-accept-button button {
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background-color: #cde0fd;
+}
+.reallocation-reject-button button {
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background-color: #cde0fd;
+}
+button:hover {
+  background-color: #adcdfe;
+  cursor: pointer;
+}
