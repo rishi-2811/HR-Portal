@@ -1,8 +1,44 @@
 import React from "react";
 import "./SignInStyle.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function SignIn() {
+  const SignupComponent = () => {
+    const [formData, setFormData] = useState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      userId: '',
+      password: '',
+    });
+  
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      try {
+        const response = await fetch('YOUR_API_ENDPOINT', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+          // Handle success, e.g., redirect to dashboard
+        } else {
+          // Handle error, e.g., show an error message
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    };
   return (
     <>
       <div className="container">
@@ -217,7 +253,7 @@ export default function SignIn() {
             <div className="centered-box-line"></div>
             <div className="centered-box-part-2">
               <div className="centered-box-part-2-loginSignup">
-                <Link to="/login">
+                <Link to="/">
                   <div className="centered-box-part-2-login_signup">Login</div>
                 </Link>
                 <div className="centered-box-part-2-signup_signup">
@@ -269,4 +305,5 @@ export default function SignIn() {
       </div>
     </>
   );
+}
 }

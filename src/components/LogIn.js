@@ -230,15 +230,16 @@ export default function LogIn() {
               <div className="username">User id</div>
               <div className="form-container_login">
                 <input type="text" id="username" name="username" required />
-              </div>
+                </div>
               <div className="username">Password</div>
               <div className="form-container_login">
                 <input type="password" id="username" name="username" required />
               </div>
-
+              
               <Link to="/dashboard">
                 <button className="login_button">Log In</button>
               </Link>
+              
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import Reallocation from './components/Reallocation';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Candidates from './components/Candidates';
 import Employee from './components/Employee';
+//import ProtectedPage from './components/ProtectedPage';
 /* import {
   BrowserRouter as Router,
   
@@ -25,21 +26,22 @@ function App() {
     <BrowserRouter>
     
     <Routes>
+      
       <Route path="/signin" element={<SignIn/>}/>
     
-      <Route path="/login" element={<Login/>}/>
+      <Route path="/" element={<Login/>}/>
       
-      <Route path="/dashboard" element={<Dashbord/>}/>
+      <Route path="/dashboard" element={<Dashbord/>} />
 
-      <Route path="/employee" element={<Employee/>}/>
+      <Route path="/employee" element={<Employee/>} />
 
-      <Route path="/candidates" element={<Candidates/>}/>
+      <Route path="/candidates" element={<Candidates/>} />
 
-      <Route path="/leave" element={<Leave/>}/>
+      <Route path="/leave" element={<Leave/>} />
 
-      <Route path="/relocation" element={<Reallocation/>}/>
+      <Route path="/relocation" element={<Reallocation/>} />
 
-      <Route path="/complains" element={<Complains/>}/>
+      <Route path="/complains" element={<Complains/>} />
     </Routes>
     </BrowserRouter>
     
