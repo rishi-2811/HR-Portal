@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export default function SignIn() {
-  const SignupComponent = () => {
+  
     const [formData, setFormData] = useState({
       firstName: '',
       lastName: '',
@@ -22,16 +22,16 @@ export default function SignIn() {
       e.preventDefault();
   
       try {
-        const response = await fetch('YOUR_API_ENDPOINT', {
+        const response = await fetch('localhost:4000/signup', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type':'application/json',
           },
           body: JSON.stringify(formData),
         });
   
         if (response.ok) {
-          // Handle success, e.g., redirect to dashboard
+          <Link to="/dashboard"/>
         } else {
           // Handle error, e.g., show an error message
         }
@@ -262,43 +262,61 @@ export default function SignIn() {
                 </div>
               </div>
               <div className="form-container_signup">
-                <form>
-                  <input
-                    className="SignInInput"
-                    type="text"
-                    placeholder="First Name"
-                    required
-                  />
-                  <input
-                    className="SignInInput"
-                    type="text"
-                    placeholder="Last Name"
-                    required
-                  />
-                  <input
-                    className="SignInInput"
-                    type="text"
-                    placeholder="Email"
-                    required
-                  />
-                  <input
-                    className="SignInInput"
-                    type="text"
-                    placeholder="User id"
-                    required
-                  />
-                  <input
-                    className="SignInInput"
-                    type="password"
-                    placeholder=" Password"
-                    required
-                  />
-                </form>
+              <form onSubmit={handleSubmit}>
+            <input
+              className="SignInInput"
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              className="SignInInput"
+              type="text"
+              placeholder="Last Name"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              className="SignInInput"
+              type="text"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              className="SignInInput"
+              type="text"
+              placeholder="User id"
+              name="userId"
+              value={formData.userId}
+              onChange={handleChange}
+              required
+            />
+            <input
+              className="SignInInput"
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+           
+            <button type="submit" className="signin_button">
+              Sign Up
+            </button>
+            
+          </form>
               </div>
 
-              <Link to="/dashboard">
-                <button className="signin_button">Sign In</button>
-              </Link>
+             
             </div>
           </div>
         </div>
@@ -306,4 +324,4 @@ export default function SignIn() {
     </>
   );
 }
-}
+
