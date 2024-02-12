@@ -27,6 +27,7 @@ const userSchema=new mongoose.Schema({
        type:String,
        required:[true,"please enter an Id"]
       },
+      
     password:
       {
         type:String,

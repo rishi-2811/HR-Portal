@@ -9,7 +9,7 @@ dotenv.config()
 mongoose.connect(process.env.URI).then(console.log("Connected to MongoDB"))
 .catch((err)=>console.log(err))
 const db=mongoose.connection
- 
+
 app.use(bodyParser.json())
  // error check
 //  app.use((req, res) => {
@@ -18,7 +18,6 @@ app.use(bodyParser.json())
 //   console.log("Host : ", req.hostname);
 //   console.log("Path : ", req.path);
 //   console.log("Method : ", req.method);
-
 // });
 
 
@@ -27,6 +26,7 @@ app.use('/',requireAuthen,require('./Routes/routes'))
 
 const cookieParser=require('cookie-parser')
 app.use(cookieParser())
+
 
 
 
