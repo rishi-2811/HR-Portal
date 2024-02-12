@@ -3,13 +3,22 @@ import './Employee_style.css'
 import { Link } from 'react-router-dom'
 
 export default function Employee() {
-  let popup= document.getElementById("popup")
-  const onPopup = () =>{
-popup.classList.add("open-popup")
-   }
-   const removePopup = ()=>{
-       popup.classList.remove("open-popup")
-   }
+  let popup = document.getElementById("popup");
+  const onPopup = () => {
+    if (popup) {
+      popup.classList.add("open-popup");
+    }
+    else{
+      let popup = document.getElementById("popup");
+        popup.classList.add("open-popup");
+      
+    }
+  };
+  const removePopup = () => {
+    if (popup ) {
+      popup.classList.remove("open-popup");
+    }
+  };
   return (
     <>
     <div className="container">
@@ -221,34 +230,34 @@ popup.classList.add("open-popup")
         </div>
     </div>
     <div className="popup" id="popup">
-        <form action="#" method="post">
-        <label for="name">Name:</label>
+        <htmlhtmlForm action="#" method="post">
+        <label htmlhtmlFor="name">Name:</label>
         <input type="text" id="name" name="name" required/>
 
-        <label for="dob">Date of Birth:</label>
+        <label htmlhtmlFor="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" required/>
 
-        <label for="age">Age:</label>
+        <label htmlhtmlFor="age">Age:</label>
         <input type="number" id="age" name="age" required/>
 
-        <label for="email">Email:</label>
+        <label htmlhtmlFor="email">Email:</label>
         <input type="email" id="email" name="email" required/>
 
-        <label for="qualification">Educational Qualification:</label>
+        <label htmlhtmlFor="qualification">Educational Qualification:</label>
         <input type="text" id="qualification" name="qualification" required/>
 
-        <label for="gender">Gender:</label>
+        <label htmlhtmlFor="gender">Gender:</label>
         <select id="gender" name="gender" required>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
         </select>
 
-        <label for="position">Position Applied For:</label>
+        <label htmlhtmlFor="position">Position Applied htmlhtmlFor:</label>
         <input type="text" id="position" name="position" required/>
 
         <button onClick={removePopup}>Submit</button>
-    </form>
+    </htmlhtmlForm>
         </div>
     </>
   )
