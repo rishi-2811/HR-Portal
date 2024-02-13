@@ -47,18 +47,21 @@ module.exports.login_get = (req, res) => {
 
 module.exports.signup_post = async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    const token=createToken(user._id)
-    res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000})
+    // Change 'id' to 'userId' in the req.body
+    const { firstName, lastName, email, userId, password } = req.body;
+    const user = await User.create({ firstName, lastName, email, userId, password });
+
+    const token = createToken(user._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     console.log('User Created successfully');
 
-    // Optionally, you can send a response back to the client indicating success.
-    res.status(201).json({ message: 'User created successfully', user:user._id });
+    res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
     const errors = handleErrors(err);
-    return res.status(400).json({ errors }); // Returning the response here
+    res.status(400).json({ errors });
   }
 };
+
 
 module.exports.login_post = async (req, res) => {
   const {email,password}=req.body;

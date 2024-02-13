@@ -233,7 +233,7 @@ export default function LogIn() {
                 </div>
               <div className="username">Password</div>
               <div className="form-container_login">
-                <input type="password" id="username" name="username" required />
+                <input type="password" id="username" name="username" requiredz />
               </div>
               
               <Link to="/dashboard">
