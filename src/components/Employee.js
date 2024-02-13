@@ -102,7 +102,7 @@ export default function Employee() {
     </filter>
   </defs>
 </svg>
-<p className="candidatesText"><Link to="/employee">Candidates</Link></p>
+<p className="candidatesText"><Link to="/candidates">Candidates</Link></p>
     </div>
     <div className="dashbord-part-2">
         <div className="dashbordNavbar">    
