@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function LogIn() {
   return (
     <>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <div className="container">
         <div className="centered-box">
           <div className="centered-box-top-part">
