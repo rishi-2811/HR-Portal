@@ -1,9 +1,41 @@
 /*eslint-disable react/jsx-no-undef*/
-import React from "react";
+import React ,{useState}from "react";
 import "./LogInStyle.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
+import axios from "axios";
 
 export default function LogIn() {
+  const navigate=useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:4000/login', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 200) {
+        console.log('Consoling')
+        navigate('/dashboard');
+      } else {
+        // Handle other cases, e.g., show an error message
+      }
+    } catch (error) {
+      console.error('Error submitting login form:', error);
+      // Handle error, e.g., show an error message
+    }
+  };
   return (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -228,18 +260,35 @@ export default function LogIn() {
                   </div>
                 </Link>
               </div>
-              <div className="username">User id</div>
-              <div className="form-container_login">
-                <input type="text" id="username" name="username" required />
-                </div>
-              <div className="username">Password</div>
-              <div className="form-container_login">
-                <input type="password" id="username" name="username" required />
-              </div>
-              
-              <Link to="/dashboard">
-                <button className="login_button">Log In</button>
-              </Link>
+              <form onSubmit={handleSubmit}>
+      <div className="username">Email</div>
+      <div className="form-container_login">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        
+      </div>
+      <div className="username">Password</div>
+      <div className="form-container_login">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <button type="submit" className="login_button">
+        Log In
+      </button>
+    </form>
+
               
             </div>
           </div>

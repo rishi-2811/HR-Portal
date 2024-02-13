@@ -1,5 +1,4 @@
 const jwt=require('jsonwebtoken')
-
 const requireAuthen=(req,res,next)=>
 {
   const token=req.cookies.jwt;
@@ -17,6 +16,7 @@ const requireAuthen=(req,res,next)=>
     }
    })
   }
+  
   else{
     res.status(400).json({error:'Login Required'})
   }

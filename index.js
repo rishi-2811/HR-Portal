@@ -20,7 +20,6 @@ app.use(bodyParser.json())
 //   console.log("Host : ", req.hostname);
 //   console.log("Path : ", req.path);
 //   console.log("Method : ", req.method);
-
 // });
 
 
@@ -29,6 +28,7 @@ app.use('/',require('./Routes/routes'))
 
 const cookieParser=require('cookie-parser')
 app.use(cookieParser())
+
 
 
 

@@ -1,10 +1,13 @@
 import React from "react";
 import "./SignInStyle.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 
 export default function SignIn() {
+  const navigate=useNavigate();
+
   
     const [formData, setFormData] = useState({
       firstName: '',
@@ -16,29 +19,44 @@ export default function SignIn() {
   
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
+       console.log('Form Data:', formData);
     };
   
     const handleSubmit = async (e) => {
+
       e.preventDefault();
-  
+      // Create a new object with properties in the desired order
+      const orderedFormData = {
+        
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        userId: formData.userId,
+        password: formData.password,
+        
+      };
+    
       try {
-        const response = await fetch('localhost:4000/signup', {
-          method: 'POST',
+        const response = await axios.post('http://localhost:4000/signup', orderedFormData, {
           headers: {
-            'Content-Type':'application/json',
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
         });
-  
-        if (response.ok) {
-          <Link to="/dashboard"/>
-        } else {
-          // Handle error, e.g., show an error message
+       
+        // Rest of your code...
+        if (response.status === 201) {
+        navigate('/dashboard');
+         
+        } else
+         {
+          // Handle other cases, e.g., show an error message
         }
       } catch (error) {
         console.error('Error submitting form:', error);
+        // Handle error, e.g., show an error message
       }
     };
+    
   return (
     <>
       <div className="container">
@@ -283,7 +301,7 @@ export default function SignIn() {
             />
             <input
               className="SignInInput"
-              type="text"
+              type=""
               placeholder="Email"
               name="email"
               value={formData.email}
@@ -291,14 +309,14 @@ export default function SignIn() {
               required
             />
             <input
-              className="SignInInput"
-              type="text"
-              placeholder="User id"
-              name="userId"
-              value={formData.userId}
-              onChange={handleChange}
-              required
-            />
+                className="SignInInput"
+                type="text"
+                 placeholder="User id"
+                  name="userId"
+                   value={formData.userId}
+                  onChange={handleChange}
+                    required/>
+            
             <input
               className="SignInInput"
               type="password"
