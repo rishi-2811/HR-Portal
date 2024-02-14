@@ -8,7 +8,7 @@ export default function Dashbord() {
   const [leaveCount, setLeaveCount] =useState(0)
   const [reloccount, setRelocCount]=useState(0)
   const [complaintcount, setcomplaintcount]=useState(0)
-  useEffect(() => {
+    useEffect(() => {
     const fetchData = async () => {
       try {
         const countResponse = await fetch('http://localhost:4000/api/HR11/employeecount');

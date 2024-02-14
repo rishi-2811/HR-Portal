@@ -11,16 +11,20 @@ mongoose.connect("mongodb+srv://mishrarishi2911:Rishi2811@cluster0.3ndhk2d.mongo
 .catch((err)=>console.log(err))
 const db=mongoose.connection
  
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  }));
 app.use(bodyParser.json())
- // error check
-//  app.use((req, res) => {
-//    console.log(1)
-//   console.log("\nNew Request Made :");
-//   console.log("Host : ", req.hostname);
-//   console.log("Path : ", req.path);
-//   console.log("Method : ", req.method);
-// });
+//  error check
+ app.use((req, res,next) => {
+   console.log(1)
+  console.log("\nNew Request Made :");
+  console.log("Host : ", req.hostname);
+  console.log("Path : ", req.path);
+  console.log("Method : ", req.method);
+  next();
+});
 
 
 app.use('/',require('./Routes/authRoutes'))
