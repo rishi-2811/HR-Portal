@@ -260,7 +260,7 @@ export default function LogIn() {
                   </div>
                 </Link>
               </div>
-              <form onSubmit={handleSubmit}>
+              <form  className="login-form" onSubmit={handleSubmit}>
       <div className="username">Email</div>
       <div className="form-container_login">
         <input

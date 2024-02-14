@@ -1,15 +1,15 @@
 /*eslint-disable react/jsx-no-undef*/
 
-//import Login from './components/LogIn'
-//import SignIn from './components/SignIn'
-//import Dashbord from './components/Dashbord'
-//import Complains from './components/Complains'
+import Login from './components/LogIn'
+import SignIn from './components/SignIn'
+import Dashbord from './components/Dashbord'
+import Complains from './components/Complains'
 import './App.css';
-//import Leave from './components/Leave';
-//import Reallocation from './components/Reallocation';
-//import {BrowserRouter, Route, Routes } from 'react-router-dom';
-//import Candidates from './components/Candidates';
-//import Employee from './components/Employee';
+import Leave from './components/Leave';
+import Reallocation from './components/Reallocation';
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
+import Candidates from './components/Candidates';
+import Employee from './components/Employee';
 //import ProtectedPage from './components/ProtectedPage';
 import InterviewScheduled from './components/InterviewScheduled';
 /* import {
@@ -21,11 +21,8 @@ import InterviewScheduled from './components/InterviewScheduled';
 function App() {
   return (
     <>
-    <InterviewScheduled/>
-   {/*  <Leave/> */}
-    {/* <Reallocation/> */}
-    {/* <Complains/> */}
-   {/*  <BrowserRouter>
+    
+    <BrowserRouter>
     
     <Routes>
       
@@ -44,8 +41,10 @@ function App() {
       <Route path="/relocation" element={<Reallocation/>} />
 
       <Route path="/complains" element={<Complains/>} />
+
+      <Route path="/interview_scheduled" element={<InterviewScheduled/>}/>
     </Routes>
-    </BrowserRouter> */}
+    </BrowserRouter>
     
     </>
   );

@@ -1495,6 +1495,7 @@ export default function Dashbord() {
                 </Link>
               </div>
               <div className="overview-box1">
+                <Link to="/interview_scheduled">
                 <div className="overview-box2">
                   <div className="overview-box3-complete">
                     <div className="overview-box3">
@@ -1703,6 +1704,7 @@ export default function Dashbord() {
                     </defs>
                   </svg>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="requiredAttention">

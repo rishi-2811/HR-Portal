@@ -33,9 +33,16 @@ export default function InterviewScheduled() {
 
           </div>
           <div className="Interview_position">
-            Position
+            <p>Position</p>
             <h3>Software Developer</h3>
           </div>
+          <div className="Interview-line1">
+
+</div>
+<div className="Interview-date">
+    <p>Date</p>
+    <h3>12/01/2004</h3>
+</div>
    </div>
    </div>
    </>

@@ -38,6 +38,28 @@
     background-color: #e3eefe;
     border-radius: 8px;
 }
+.Interview-line1{
+    width:0.3%;
+    height: 75%;
+    background-color: #e3eefe;
+    border-radius: 8px;
+}
 .Interview_position{
-    
+    width:30%;
+    height: 100%;
+    margin-left: 15%;
+}
+.Interview_position p{
+margin-left: 8%;
+}
+.Interview-date {
+width: 10%;
+height: 100%;
+margin-left: 10%;
+}
+.Interview-date p{
+margin-left: 15%;
+}
+.Interview-date h3{
+
 }
