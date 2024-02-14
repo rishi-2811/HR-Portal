@@ -96,7 +96,6 @@ line-height: normal;
 
 .signin_button{
     margin-top: 35px;
-    margin-left: 25px;
     box-sizing: border-box;
     border: 0px;
     background: #F7AC25;
@@ -113,6 +112,11 @@ font-size: 16px;
 }
 Link{
     color: white;
+}
+.signin_input{
+    background: linear-gradient(0deg, #E6EEF8 0%, #E6EEF8 100%), #CFD8DC;;
+    box-shadow: none;
+    border: none;
 }
 
 

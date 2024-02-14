@@ -11,6 +11,7 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Candidates from './components/Candidates';
 import Employee from './components/Employee';
 //import ProtectedPage from './components/ProtectedPage';
+import InterviewScheduled from './components/InterviewScheduled';
 /* import {
   BrowserRouter as Router,
   
@@ -20,9 +21,7 @@ import Employee from './components/Employee';
 function App() {
   return (
     <>
-   {/*  <Leave/> */}
-    {/* <Reallocation/> */}
-    {/* <Complains/> */}
+    
     <BrowserRouter>
     
     <Routes>
@@ -42,6 +41,8 @@ function App() {
       <Route path="/relocation" element={<Reallocation/>} />
 
       <Route path="/complains" element={<Complains/>} />
+
+      <Route path="/interview_scheduled" element={<InterviewScheduled/>}/>
     </Routes>
     </BrowserRouter>
     

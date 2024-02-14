@@ -280,7 +280,7 @@ export default function SignIn() {
                 </div>
               </div>
               <div className="form-container_signup">
-              <form onSubmit={handleSubmit}>
+              <form className="signin_input" onSubmit={handleSubmit}>
             <input
               className="SignInInput"
               type="text"
