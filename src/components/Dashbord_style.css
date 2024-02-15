@@ -15,26 +15,26 @@
     margin-top: 25px;
 }
 
-.candidates{
-    margin-top: 50px;
+.dashboard_candidates{
+   margin-top: 50%;
     opacity: 0.4;
 }
-.employee{
+.dashboard_employee{
     opacity: 0.4;
 }
-.employeeText{
+.dashboard_employeeText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .candidatesText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .dashbord-part-2{
     height: 742px;
@@ -181,11 +181,11 @@ justify-content: center;
     display: flex;
     margin-right: 25px;
 }
-.home_Text {
+.dashboard_home_Text {
     color: white;
     margin-top: -40%;
     margin-bottom: 50%;
 }
-.candidates{
+.dashboard_candidates{
     padding-left: 5%;
 }

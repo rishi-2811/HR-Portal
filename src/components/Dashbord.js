@@ -143,13 +143,13 @@ export default function Dashbord() {
               </filter>
             </defs>
           </svg>
-          <p className="home_Text">
+          <p className="dashboard_home_Text">
             Home
           </p>
           <Link to="/employee">
           <div className="dashboard_employee">
           <svg
-            className="employee"
+            className="dashboard_employee"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="32"
@@ -232,7 +232,7 @@ export default function Dashbord() {
               </filter>
             </defs>
           </svg>
-          <p className="employeeText">
+          <p className="dashboard_employeeText">
             Employee
           </p>
           </div>
@@ -240,7 +240,7 @@ export default function Dashbord() {
           <Link to="/candidates">
           <div className="dashboard_candidates">
           <svg
-            className="candidates"
+            className="dashboard_candidates"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"

@@ -221,11 +221,12 @@ export default function Candidates() {
               </filter>
             </defs>
           </svg>
-          <p className="employeeText">
+          <p className="candidates_employeeText">
             Employee
           </p>
           </div>
           </Link>
+          <div className="candidates_candidates">
           <svg
             className="candidates"
             xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +311,8 @@ export default function Candidates() {
               </filter>
             </defs>
           </svg>
-          <p className="candidatesText">Candidates</p>
+          <p className="candidates_candidatesText">Candidates</p>
+          </div>
         </div>
         <div className="dashbord-part-2">
           <div className="dashbordNavbar"></div>

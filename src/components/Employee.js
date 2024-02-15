@@ -112,7 +112,7 @@ export default function Employee() {
           <Link to="/employee">
           <div className="employee_employee">
           <svg
-            className="employee_employee1"
+            className="employee_employee"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="32"
@@ -195,7 +195,7 @@ export default function Employee() {
               </filter>
             </defs>
           </svg>
-          <p className="employeeText">
+          <p className="employee_employeeText">
             Employee
           </p>
           </div>
@@ -286,7 +286,7 @@ export default function Employee() {
               </filter>
             </defs>
           </svg>
-          <p className="candidatesText">
+          <p className="employee_candidatesText">
             Candidates
           </p>
           </div>
