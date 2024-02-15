@@ -8,24 +8,28 @@ export default function Dashbord() {
   const [leaveCount, setLeaveCount] =useState(0)
   const [reloccount, setRelocCount]=useState(0)
   const [complaintcount, setcomplaintcount]=useState(0)
+  const [interviewcount, setinterviewcount]=useState(0)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const countResponse = await fetch('http://localhost:4000/api/HR11/employeecount');
+        const countResponse = await fetch('http://localhost:4000/api/employeecount');
         const countData = await countResponse.json();
         setEmployeeCount(countData)
         const cResponse = await fetch('http://localhost:4000/api/candidatecount');
         const cData = await cResponse.json();
         setCandidateCount(cData)
-        const coResponse = await fetch('http://localhost:4000/api/HR11/leavecount');
+        const coResponse = await fetch('http://localhost:4000/api/leavecount');
         const coData = await coResponse.json();
         setLeaveCount(coData)
-        const couResponse = await fetch('http://localhost:4000/api/HR11/reloccount');
+        const couResponse = await fetch('http://localhost:4000/api/reloccount');
         const couData = await couResponse.json();
         setRelocCount(couData)
-        const counResponse = await fetch('http://localhost:4000/api/HR11/complaintcount');
+        const counResponse = await fetch('http://localhost:4000/api/complaintcount');
         const counData = await counResponse.json();
         setcomplaintcount(counData)
+        const CounResponse = await fetch('http://localhost:4000/api/candidateintschedule');
+        const CounData = await CounResponse.json();
+        setinterviewcount(CounData)
       } catch (error) {
         console.error(error);
       }
@@ -1498,9 +1502,9 @@ export default function Dashbord() {
                 <div className="overview-box2">
                   <div className="overview-box3-complete">
                     <div className="overview-box3">
-                      <h1>45</h1>
+                      <h1>{interviewcount}</h1>
                     </div>
-                    <div className="overview-box3-text">No of Employees</div>
+                    <div className="overview-box3-text">Interviews Scheduled</div>
                   </div>
                   <svg
                     className="a1"

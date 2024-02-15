@@ -1,12 +1,42 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./Leave_style.css";
 
 export default function Leave() {
+  const [leave,setleave]=useState([])
+  useEffect(()=>{
+     const fetchData=async()=>{
+      try {
+        const response=await fetch('http://localhost:4000/api/leaves')
+        const data=await response.json()
+        console.log('Fetched data:', data);
+        setleave(data)
+      } catch (error) {
+        console.log(error)
+      }
+     }
+
+     fetchData()  
+  },[])
+  const onAccept=async(id)=>{
+    try {
+      const response=await fetch('http://localhost:4000/api/leaveaccept_delete',{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({"id":id})
+      })
+      window.location.reload()
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <>
-      <div className="leave">
+    <div className="leave">
         <div className="leave_navbar"></div>
-        <div className="leave-box">
+      {leave.map(leave=>(
+        <div key={leave._id} className="leave-box">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -25,8 +55,8 @@ export default function Leave() {
             />
           </svg>
           <div className="leave-username-email">
-            <div className="leave-username">Username</div>
-            <div className="leave-email">email@gmail.com</div>
+            <div className="leave-username">{`${leave.firstName} ${leave.lastName}`}</div>
+            <div className="leave-email">{leave.leaveRequest.reason}</div>
           </div>
           <div className="leave-break"></div>
           <div className="leave-dates">
@@ -58,12 +88,14 @@ export default function Leave() {
           </div>
           <div className="leave-break"></div>
           <div className="leave-accept-button">
-            <button>Accept</button>
+            <button onClick={()=>onAccept(leave.id)}>Accept</button>
           </div>
           <div className="leave-reject-button">
-            <button>Reject</button>
+            <button onClick={()=>onAccept(leave.id)}>Reject</button>
           </div>
         </div>
+      
+      ))}
       </div>
     </>
   );
