@@ -1,11 +1,12 @@
 const jwt=require('jsonwebtoken')
-
+const dotenv=require('dotenv')
+const secret=process.env.secret;
 const requireAuthen=(req,res,next)=>
 {
   const token=req.cookies.jwt;
   if(token)
   {
-   jwt.verify(token,'vamshidhar',(err,decodedToken)=>
+   jwt.verify(token,secret,(err,decodedToken)=>
    {
     if(err)
     {
@@ -17,6 +18,7 @@ const requireAuthen=(req,res,next)=>
     }
    })
   }
+  
   else{
     res.status(400).json({error:'Login Required'})
   }

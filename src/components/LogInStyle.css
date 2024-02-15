@@ -114,6 +114,11 @@ height: 38px;
 color: white;
 font-size: 16px;
 }
+.login-form{
+    background: linear-gradient(0deg, #E6EEF8 0%, #E6EEF8 100%), #CFD8DC;;
+    box-shadow: none;
+    border: none;
+}
 
 
 
