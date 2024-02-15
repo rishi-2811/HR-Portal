@@ -72,6 +72,7 @@ export default function Dashbord() {
             />
           </svg>
           <svg
+          className="dashboard_home"
             xmlns="http://www.w3.org/2000/svg"
             width="134"
             height="144"
@@ -142,7 +143,11 @@ export default function Dashbord() {
               </filter>
             </defs>
           </svg>
-
+          <p className="home_Text">
+            Home
+          </p>
+          <Link to="/employee">
+          <div className="dashboard_employee">
           <svg
             className="employee"
             xmlns="http://www.w3.org/2000/svg"
@@ -228,8 +233,12 @@ export default function Dashbord() {
             </defs>
           </svg>
           <p className="employeeText">
-            <Link to="/employee">Employee</Link>
+            Employee
           </p>
+          </div>
+          </Link>
+          <Link to="/candidates">
+          <div className="dashboard_candidates">
           <svg
             className="candidates"
             xmlns="http://www.w3.org/2000/svg"
@@ -315,11 +324,18 @@ export default function Dashbord() {
             </defs>
           </svg>
           <p className="candidatesText">
-            <Link to="/employee">Candidates</Link>
+            Candidates
           </p>
+          </div>
+          </Link>
         </div>
         <div className="dashbord-part-2">
-          <div className="dashbordNavbar"></div>
+          <div className="dashbordNavbar">
+            <div className="logout_button">
+              <button>Log Out</button>
+            </div>
+          </div>
+          
           <div className="dashbordOverview">
             <h1>Overview</h1>
             <div className="overview-boxes">
@@ -1501,7 +1517,7 @@ export default function Dashbord() {
                     <div className="overview-box3">
                       <h1>45</h1>
                     </div>
-                    <div className="overview-box3-text">No of Employees</div>
+                    <div className="overview-box3-text">Interview Scheduled</div>
                   </div>
                   <svg
                     className="a1"

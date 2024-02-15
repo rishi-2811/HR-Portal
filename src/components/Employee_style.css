@@ -14,24 +14,30 @@
 .logo{
     margin-top: 25px;
 }
-.homeText{
-    margin: 0px;
-    padding: 0px;
+
+.employee_candidates{
+    margin-top: 60px;
+    opacity: 0.4;
+}
+.employee-home{
+    opacity: 0.4;
+}
+.employee_home_Text {
     color: white;
-    font-size: 10px;
-}
-.candidates{
-    margin-top: 50px;
+    margin-left: 35%;
+    margin-top: -40%;
+    margin-bottom: 50%;
     opacity: 0.4;
 }
-.home{
-    opacity: 0.4;
+.employee_employee1{
+    opacity: 1;
 }
 .employeeText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
+    opacity: 1;
 }
 .candidatesText{
     margin: 0px;
@@ -172,4 +178,8 @@ margin: 25px;
     }
     .popup button:hover{
         background-color: #408ee8;
+    }
+    
+    .employee_candidates{
+        padding-left: 5%;
     }

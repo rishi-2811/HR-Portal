@@ -30,79 +30,267 @@ export default function Employee() {
   <path d="M15.6993 40.4396C24.5279 31.1906 36.8879 14.6912 15.6993 22.6854V40.4396Z" fill="#F7AC25"/>
   <ellipse cx="15.8334" cy="7.6424" rx="8.23194" ry="7.20294" fill="#4B93E7"/>
 </svg>
-<svg className="home"xmlns="http://www.w3.org/2000/svg" width="134" height="144" viewBox="0 0 134 144" fill="none">
-  <g filter="url(#filter0_dd_372_987)">
-    <path d="M64.4453 56.6723C63.4972 55.7759 62.0142 55.7759 61.0662 56.6723L49.1546 67.9342C48.4176 68.631 48 69.6005 48 70.6147V84.3111C48 86.3483 49.6516 88 51.6889 88H55.3779C57.4152 88 59.0668 86.3483 59.0668 84.3111V78.1629C59.0668 77.4838 59.6173 76.9333 60.2964 76.9333H65.215C65.8941 76.9333 66.4447 77.4838 66.4447 78.1629V84.3111C66.4447 86.3483 68.0963 88 70.1336 88H73.8225C75.8598 88 77.5114 86.3483 77.5114 84.3111V70.6147C77.5114 69.6005 77.0939 68.631 76.3568 67.9342L64.4453 56.6723Z" fill="#CFD8DC"/>
-    <path d="M64.4453 56.6723C63.4972 55.7759 62.0142 55.7759 61.0662 56.6723L49.1546 67.9342C48.4176 68.631 48 69.6005 48 70.6147V84.3111C48 86.3483 49.6516 88 51.6889 88H55.3779C57.4152 88 59.0668 86.3483 59.0668 84.3111V78.1629C59.0668 77.4838 59.6173 76.9333 60.2964 76.9333H65.215C65.8941 76.9333 66.4447 77.4838 66.4447 78.1629V84.3111C66.4447 86.3483 68.0963 88 70.1336 88H73.8225C75.8598 88 77.5114 86.3483 77.5114 84.3111V70.6147C77.5114 69.6005 77.0939 68.631 76.3568 67.9342L64.4453 56.6723Z" fill="#F0F7FF"/>
-  </g>
-  <defs>
-    <filter id="filter0_dd_372_987" x="-8" y="0" width="141.511" height="144" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="16" dy="16"/>
-      <feGaussianBlur stdDeviation="20"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_372_987"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="-16" dy="-16"/>
-      <feGaussianBlur stdDeviation="20"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"/>
-      <feBlend mode="normal" in2="effect1_dropShadow_372_987" result="effect2_dropShadow_372_987"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_372_987" result="shape"/>
-    </filter>
-  </defs>
-</svg>
-
-<svg className="employee" xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
-  <g filter="url(#filter0_ii_372_926)">
-    <path d="M18.8954 17.4533C21.3052 17.4533 23.2588 19.4068 23.2588 21.8166L23.2565 23.9935C23.5557 29.3358 19.441 32 11.8106 32C4.20484 32 0 29.3707 0 24.0697V21.8166C0 19.4068 1.95352 17.4533 4.36332 17.4533H18.8954ZM30.5327 17.4533C32.9425 17.4533 34.896 19.4068 34.896 21.8166L34.8938 23.3483C35.1568 28.1406 31.5211 30.5432 24.8755 30.5432C23.8793 30.5432 23.4164 29.2838 23.8703 28.397C24.4352 27.2931 24.7286 26.0078 24.7269 24.5409L24.7086 23.9121L24.7132 21.8166C24.7132 20.0976 25.9593 17.4526 27.6783 17.4528L30.5327 17.4533ZM11.6355 0C15.6525 0 18.9089 3.2564 18.9089 7.27337C18.9089 11.2903 15.6525 14.5467 11.6355 14.5467C7.61854 14.5467 4.36214 11.2903 4.36214 7.27337C4.36214 3.2564 7.61854 0 11.6355 0ZM26.1799 2.90888C29.3929 2.90888 31.9976 5.51357 31.9976 8.72663C31.9976 11.9397 29.3929 14.5444 26.1799 14.5444C22.9668 14.5444 20.3621 11.9397 20.3621 8.72663C20.3621 5.51357 22.9668 2.90888 26.1799 2.90888Z" fill="#CFD8DC"/>
-    <path d="M18.8954 17.4533C21.3052 17.4533 23.2588 19.4068 23.2588 21.8166L23.2565 23.9935C23.5557 29.3358 19.441 32 11.8106 32C4.20484 32 0 29.3707 0 24.0697V21.8166C0 19.4068 1.95352 17.4533 4.36332 17.4533H18.8954ZM30.5327 17.4533C32.9425 17.4533 34.896 19.4068 34.896 21.8166L34.8938 23.3483C35.1568 28.1406 31.5211 30.5432 24.8755 30.5432C23.8793 30.5432 23.4164 29.2838 23.8703 28.397C24.4352 27.2931 24.7286 26.0078 24.7269 24.5409L24.7086 23.9121L24.7132 21.8166C24.7132 20.0976 25.9593 17.4526 27.6783 17.4528L30.5327 17.4533ZM11.6355 0C15.6525 0 18.9089 3.2564 18.9089 7.27337C18.9089 11.2903 15.6525 14.5467 11.6355 14.5467C7.61854 14.5467 4.36214 11.2903 4.36214 7.27337C4.36214 3.2564 7.61854 0 11.6355 0ZM26.1799 2.90888C29.3929 2.90888 31.9976 5.51357 31.9976 8.72663C31.9976 11.9397 29.3929 14.5444 26.1799 14.5444C22.9668 14.5444 20.3621 11.9397 20.3621 8.72663C20.3621 5.51357 22.9668 2.90888 26.1799 2.90888Z" fill="#E6EEF8"/>
-  </g>
-  <defs>
-    <filter id="filter0_ii_372_926" x="-4" y="-4" width="42.9072" height="40" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="4" dy="4"/>
-      <feGaussianBlur stdDeviation="6"/>
-      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"/>
-      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_372_926"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="-4" dy="-4"/>
-      <feGaussianBlur stdDeviation="6"/>
-      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"/>
-      <feBlend mode="normal" in2="effect1_innerShadow_372_926" result="effect2_innerShadow_372_926"/>
-    </filter>
-  </defs>
-</svg>
-<p className="employeeText">Employee</p>
-<svg className="candidates" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-  <g filter="url(#filter0_ii_372_187)">
-    <path d="M12 0C9.79088 0 8 1.79088 8 4V6C8 7.10457 7.10457 8 6 8C2.68628 8 0 10.6863 0 14V26C0 29.3137 2.68628 32 6 32H26C29.3137 32 32 29.3137 32 26V14C32 10.6863 29.3137 8 26 8C24.8954 8 24 7.10457 24 6V4C24 1.79088 22.2091 0 20 0H12ZM20 6C20 7.10457 19.1046 8 18 8H14C12.8954 8 12 7.10457 12 6C12 4.89543 12.8954 4 14 4H18C19.1046 4 20 4.89543 20 6Z" fill="#CFD8DC"/>
-    <path d="M12 0C9.79088 0 8 1.79088 8 4V6C8 7.10457 7.10457 8 6 8C2.68628 8 0 10.6863 0 14V26C0 29.3137 2.68628 32 6 32H26C29.3137 32 32 29.3137 32 26V14C32 10.6863 29.3137 8 26 8C24.8954 8 24 7.10457 24 6V4C24 1.79088 22.2091 0 20 0H12ZM20 6C20 7.10457 19.1046 8 18 8H14C12.8954 8 12 7.10457 12 6C12 4.89543 12.8954 4 14 4H18C19.1046 4 20 4.89543 20 6Z" fill="#E6EEF8"/>
-  </g>
-  <defs>
-    <filter id="filter0_ii_372_187" x="-4" y="-4" width="40" height="40" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="4" dy="4"/>
-      <feGaussianBlur stdDeviation="6"/>
-      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"/>
-      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_372_187"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dx="-4" dy="-4"/>
-      <feGaussianBlur stdDeviation="6"/>
-      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"/>
-      <feBlend mode="normal" in2="effect1_innerShadow_372_187" result="effect2_innerShadow_372_187"/>
-    </filter>
-  </defs>
-</svg>
-<p className="candidatesText"><Link to="/candidates">Candidates</Link></p>
+<Link to="/dashboard">
+<div className="employee-home">
+<svg
+          className="employee_home1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="134"
+            height="144"
+            viewBox="0 0 134 144"
+            fill="none"
+          >
+            <g filter="url(#filter0_dd_372_987)">
+              <path
+                d="M64.4453 56.6723C63.4972 55.7759 62.0142 55.7759 61.0662 56.6723L49.1546 67.9342C48.4176 68.631 48 69.6005 48 70.6147V84.3111C48 86.3483 49.6516 88 51.6889 88H55.3779C57.4152 88 59.0668 86.3483 59.0668 84.3111V78.1629C59.0668 77.4838 59.6173 76.9333 60.2964 76.9333H65.215C65.8941 76.9333 66.4447 77.4838 66.4447 78.1629V84.3111C66.4447 86.3483 68.0963 88 70.1336 88H73.8225C75.8598 88 77.5114 86.3483 77.5114 84.3111V70.6147C77.5114 69.6005 77.0939 68.631 76.3568 67.9342L64.4453 56.6723Z"
+                fill="#CFD8DC"
+              />
+              <path
+                d="M64.4453 56.6723C63.4972 55.7759 62.0142 55.7759 61.0662 56.6723L49.1546 67.9342C48.4176 68.631 48 69.6005 48 70.6147V84.3111C48 86.3483 49.6516 88 51.6889 88H55.3779C57.4152 88 59.0668 86.3483 59.0668 84.3111V78.1629C59.0668 77.4838 59.6173 76.9333 60.2964 76.9333H65.215C65.8941 76.9333 66.4447 77.4838 66.4447 78.1629V84.3111C66.4447 86.3483 68.0963 88 70.1336 88H73.8225C75.8598 88 77.5114 86.3483 77.5114 84.3111V70.6147C77.5114 69.6005 77.0939 68.631 76.3568 67.9342L64.4453 56.6723Z"
+                fill="#F0F7FF"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_dd_372_987"
+                x="-8"
+                y="0"
+                width="141.511"
+                height="144"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="16" dy="16" />
+                <feGaussianBlur stdDeviation="20" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_372_987"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-16" dy="-16" />
+                <feGaussianBlur stdDeviation="20" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="effect1_dropShadow_372_987"
+                  result="effect2_dropShadow_372_987"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect2_dropShadow_372_987"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+          <p className="employee_home_Text">
+            Home
+          </p>
+          </div>
+          </Link>
+          <Link to="/employee">
+          <div className="employee_employee">
+          <svg
+            className="employee_employee1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="32"
+            viewBox="0 0 35 32"
+            fill="none"
+          >
+            <g filter="url(#filter0_ii_372_926)">
+              <path
+                d="M18.8954 17.4533C21.3052 17.4533 23.2588 19.4068 23.2588 21.8166L23.2565 23.9935C23.5557 29.3358 19.441 32 11.8106 32C4.20484 32 0 29.3707 0 24.0697V21.8166C0 19.4068 1.95352 17.4533 4.36332 17.4533H18.8954ZM30.5327 17.4533C32.9425 17.4533 34.896 19.4068 34.896 21.8166L34.8938 23.3483C35.1568 28.1406 31.5211 30.5432 24.8755 30.5432C23.8793 30.5432 23.4164 29.2838 23.8703 28.397C24.4352 27.2931 24.7286 26.0078 24.7269 24.5409L24.7086 23.9121L24.7132 21.8166C24.7132 20.0976 25.9593 17.4526 27.6783 17.4528L30.5327 17.4533ZM11.6355 0C15.6525 0 18.9089 3.2564 18.9089 7.27337C18.9089 11.2903 15.6525 14.5467 11.6355 14.5467C7.61854 14.5467 4.36214 11.2903 4.36214 7.27337C4.36214 3.2564 7.61854 0 11.6355 0ZM26.1799 2.90888C29.3929 2.90888 31.9976 5.51357 31.9976 8.72663C31.9976 11.9397 29.3929 14.5444 26.1799 14.5444C22.9668 14.5444 20.3621 11.9397 20.3621 8.72663C20.3621 5.51357 22.9668 2.90888 26.1799 2.90888Z"
+                fill="#CFD8DC"
+              />
+              <path
+                d="M18.8954 17.4533C21.3052 17.4533 23.2588 19.4068 23.2588 21.8166L23.2565 23.9935C23.5557 29.3358 19.441 32 11.8106 32C4.20484 32 0 29.3707 0 24.0697V21.8166C0 19.4068 1.95352 17.4533 4.36332 17.4533H18.8954ZM30.5327 17.4533C32.9425 17.4533 34.896 19.4068 34.896 21.8166L34.8938 23.3483C35.1568 28.1406 31.5211 30.5432 24.8755 30.5432C23.8793 30.5432 23.4164 29.2838 23.8703 28.397C24.4352 27.2931 24.7286 26.0078 24.7269 24.5409L24.7086 23.9121L24.7132 21.8166C24.7132 20.0976 25.9593 17.4526 27.6783 17.4528L30.5327 17.4533ZM11.6355 0C15.6525 0 18.9089 3.2564 18.9089 7.27337C18.9089 11.2903 15.6525 14.5467 11.6355 14.5467C7.61854 14.5467 4.36214 11.2903 4.36214 7.27337C4.36214 3.2564 7.61854 0 11.6355 0ZM26.1799 2.90888C29.3929 2.90888 31.9976 5.51357 31.9976 8.72663C31.9976 11.9397 29.3929 14.5444 26.1799 14.5444C22.9668 14.5444 20.3621 11.9397 20.3621 8.72663C20.3621 5.51357 22.9668 2.90888 26.1799 2.90888Z"
+                fill="#E6EEF8"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_ii_372_926"
+                x="-4"
+                y="-4"
+                width="42.9072"
+                height="40"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="4" dy="4" />
+                <feGaussianBlur stdDeviation="6" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect1_innerShadow_372_926"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-4" dy="-4" />
+                <feGaussianBlur stdDeviation="6" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="effect1_innerShadow_372_926"
+                  result="effect2_innerShadow_372_926"
+                />
+              </filter>
+            </defs>
+          </svg>
+          <p className="employeeText">
+            Employee
+          </p>
+          </div>
+          </Link>
+          <Link to="/candidates">
+          <div className="employee_candidates">
+          <svg
+            className="employee_candidates1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <g filter="url(#filter0_ii_372_187)">
+              <path
+                d="M12 0C9.79088 0 8 1.79088 8 4V6C8 7.10457 7.10457 8 6 8C2.68628 8 0 10.6863 0 14V26C0 29.3137 2.68628 32 6 32H26C29.3137 32 32 29.3137 32 26V14C32 10.6863 29.3137 8 26 8C24.8954 8 24 7.10457 24 6V4C24 1.79088 22.2091 0 20 0H12ZM20 6C20 7.10457 19.1046 8 18 8H14C12.8954 8 12 7.10457 12 6C12 4.89543 12.8954 4 14 4H18C19.1046 4 20 4.89543 20 6Z"
+                fill="#CFD8DC"
+              />
+              <path
+                d="M12 0C9.79088 0 8 1.79088 8 4V6C8 7.10457 7.10457 8 6 8C2.68628 8 0 10.6863 0 14V26C0 29.3137 2.68628 32 6 32H26C29.3137 32 32 29.3137 32 26V14C32 10.6863 29.3137 8 26 8C24.8954 8 24 7.10457 24 6V4C24 1.79088 22.2091 0 20 0H12ZM20 6C20 7.10457 19.1046 8 18 8H14C12.8954 8 12 7.10457 12 6C12 4.89543 12.8954 4 14 4H18C19.1046 4 20 4.89543 20 6Z"
+                fill="#E6EEF8"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_ii_372_187"
+                x="-4"
+                y="-4"
+                width="40"
+                height="40"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="4" dy="4" />
+                <feGaussianBlur stdDeviation="6" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.733333 0 0 0 0 0.764706 0 0 0 0 0.807843 0 0 0 0.6 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect1_innerShadow_372_187"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-4" dy="-4" />
+                <feGaussianBlur stdDeviation="6" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.992157 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="effect1_innerShadow_372_187"
+                  result="effect2_innerShadow_372_187"
+                />
+              </filter>
+            </defs>
+          </svg>
+          <p className="candidatesText">
+            Candidates
+          </p>
+          </div>
+          </Link>
     </div>
     <div className="dashbord-part-2">
         <div className="dashbordNavbar">    

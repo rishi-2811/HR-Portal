@@ -56,6 +56,8 @@ export default function Candidates() {
               fill="#4B93E7"
             />
           </svg>
+          <Link to="/dashboard">
+          <div className="candidates_home">
           <svg
             className="home"
             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +130,13 @@ export default function Candidates() {
               </filter>
             </defs>
           </svg>
-
+          <p className="candidates_home_Text">
+            Home
+          </p>
+          </div>
+          </Link>
+          <Link to="/employee">
+          <div className="candidates_employee">
           <svg
             className="employee"
             xmlns="http://www.w3.org/2000/svg"
@@ -214,8 +222,10 @@ export default function Candidates() {
             </defs>
           </svg>
           <p className="employeeText">
-            <Link to="/employee">Employee</Link>
+            Employee
           </p>
+          </div>
+          </Link>
           <svg
             className="candidates"
             xmlns="http://www.w3.org/2000/svg"
