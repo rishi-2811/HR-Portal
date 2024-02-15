@@ -33,10 +33,6 @@ app.use('/',require('./Routes/routes'))
 const cookieParser=require('cookie-parser')
 app.use(cookieParser())
 
-
-
-
-
 app.listen(process.env.port||4000,function()
 {
     console.log('listening to requests')
