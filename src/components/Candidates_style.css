@@ -30,14 +30,18 @@
 .home{
     opacity: 0.4;
 }
-.employeeText{
+.candidates_employeeText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
     opacity: 0.4;
 }
-.candidatesText{
+.candidates_candidates svg{
+    margin-top: 85%;
+    margin-left: 25%;
+}
+.candidates_candidatesText{
     margin: 0px;
     padding: 0px;
     color: white;

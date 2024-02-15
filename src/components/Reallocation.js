@@ -1,12 +1,40 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./Reallocation_style.css";
 
 export default function Reallocation() {
+  const [reloc,setreloc]=useState([])
+  useEffect(()=>{
+     const fetchdata=async()=>{
+      try {
+        const response=await fetch('http://localhost:4000/api/relocs')
+        const data=await response.json()
+        setreloc(data)
+      } catch (error) {
+        console.error(error)
+      }
+     }
+     fetchdata()
+  },[])
+  const onAccept=async(id)=>{
+    try {
+      const response=await fetch('http://localhost:4000/api/relocaccept_delete',{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({"id":id})
+      })
+      window.location.reload()
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <>
-      <div className="reallocation">
+    <div className="reallocation">
         <div className="complains_navbar"></div>
-        <div className="reallocation-box">
+      {reloc.map(reloc=>(
+        <div key={reloc._id} className="reallocation-box">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -25,14 +53,14 @@ export default function Reallocation() {
             />
           </svg>
           <div className="reallocation-username-email">
-            <div className="reallocation-username">Username</div>
-            <div className="reallocation-email">email@gmail.com</div>
+            <div className="reallocation-username">{`${reloc.firstName} ${reloc.lastName}`}</div>
+            <div className="reallocation-email">{reloc.email}</div>
           </div>
           <div className="reallocation-break"></div>
           <div className="reallocation-destinations">
             <div className="reallocation-from">
-              <p>Form</p>
-              <p className="destination">Destination</p>
+              <p>From</p>
+              <p className="destination">{reloc.relocationRequest.originalLocation}</p>
             </div>
             <div className="reallocation-symboll">
               <svg
@@ -73,17 +101,19 @@ export default function Reallocation() {
             </div>
             <div className="reallocation-destination">
               <p>To</p>
-              <p className="destination">Destination</p>
+              <p className="destination">{reloc.relocationRequest.newLocation}</p>
             </div>
           </div>
           <div className="reallocation-break"></div>
           <div className="reallocation-accept-button">
-            <button>Accept</button>
+            <button onClick={()=>onAccept(reloc.id)}>Accept</button>
           </div>
           <div className="reallocation-reject-button">
-            <button>Reject</button>
+            <button onClick={()=>onAccept(reloc.id)}>Reject</button>
           </div>
         </div>
+      
+      ))}
       </div>
     </>
   );

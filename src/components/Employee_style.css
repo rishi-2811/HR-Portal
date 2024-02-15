@@ -16,7 +16,7 @@
 }
 
 .employee_candidates{
-    margin-top: 60px;
+    margin-top: 65px;
     opacity: 0.4;
 }
 .employee-home{
@@ -29,18 +29,17 @@
     margin-bottom: 50%;
     opacity: 0.4;
 }
-.employee_employee1{
+.employee_employee{
     opacity: 1;
 }
-.employeeText{
+.employee_employeeText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
     opacity: 1;
 }
-
-.candidatesText{
+.employee_candidatesText{
     margin: 0px;
     padding: 0px;
     color: white;
@@ -58,6 +57,9 @@
     height: 6%;
     background: #FFF;
 box-shadow: 0px 4px 20px 0px rgba(91, 91, 91, 0.13);
+}
+.addEmployeeButton button:hover{
+    background: #72abec;
 }
 .addEmployeeButton button{
  width: 180px;
@@ -109,6 +111,9 @@ margin-left: 10px;
    width: 2.5px;
    background-color: #E5EDF9;
    margin-left: 600px;
+}
+.employeeBlockEditDelete button:hover{
+    background: #72abec; 
 }
 .employeeBlockEditDelete button{
 color: white;
@@ -183,5 +188,8 @@ margin: 25px;
     }
     
     .employee_candidates{
-        padding-left: 5%;
+        margin-left: 5%;
+    }
+    .employee_candidates svg{
+        margin-left: 25%;
     }
