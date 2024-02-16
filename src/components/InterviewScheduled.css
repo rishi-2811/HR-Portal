@@ -56,10 +56,15 @@ margin-left: 8%;
 width: 10%;
 height: 100%;
 margin-left: 10%;
+margin-top: 5%;
 }
 .Interview-date p{
+    margin: 2%;
 margin-left: 15%;
 }
-.Interview-date h3{
-
+.interview_position{
+    font-size: 1.3rem;
+}
+.interview_date{
+    font-size: 1.4rem;
 }
