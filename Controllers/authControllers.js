@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const jwt=require('jsonwebtoken')
- 
+ const dotenv=require('dotenv')
 
 // Handle Error
 const handleErrors = (err) => {
@@ -32,7 +32,7 @@ const createToken=(id)=>
     expiresIn:maxAge
   })
 }
-
+const secret=process.env.secret;
 module.exports.signup_get = (req, res) => {
   res.send('signup request');
 };
