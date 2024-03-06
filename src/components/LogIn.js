@@ -10,25 +10,24 @@ export default function LogIn() {
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Clear the error for the corresponding input field when user modifies it
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:4000/login",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post("http://localhost:4000/login", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
 
       if (response.status === 200) {
         console.log("Consoling");
@@ -37,8 +36,16 @@ export default function LogIn() {
         // Handle other cases, e.g., show an error message
       }
     } catch (error) {
-      console.error("Error submitting login form:", error);
-      // Handle error, e.g., show an error message
+      if (error.response) {
+        // Server responded with an error (e.g., validation error)
+        setErrors(error.response.data.errors);
+      } else {
+        // Some other error occurred
+        setErrors({
+          email: "An unexpected error occurred. Please try again.",
+          password: "",
+        });
+      }
     }
   };
   return (
@@ -276,6 +283,8 @@ export default function LogIn() {
                     onChange={handleChange}
                     required
                   />
+                  {errors.email && <p className="error-message">{errors.email}</p>}
+
                 </div>
                 <div className="username">Password</div>
                 <div className="form-container_login">
@@ -286,7 +295,9 @@ export default function LogIn() {
                     value={formData.password}
                     onChange={handleChange}
                     required
-                  />
+                  />     
+                 {errors.password && <p className="error-message">{errors.password}</p>}
+
                 </div>
                 <button type="submit" className="login_button">
                   Log In
