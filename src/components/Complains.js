@@ -1,37 +1,57 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./Complains_style.css";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function complains() {
+export default function Complains() {
+  const [complaint,setcomplaint]=useState([])
+  useEffect(()=>{
+    const fetchdata=async()=>{
+      try {
+        const response=await fetch('http://localhost:4000/api/complaints')
+        const data=await response.json()
+        setcomplaint(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchdata()
+  },[])
+  const onAccept=async(id)=>{
+    try {
+      const response=await fetch('http://localhost:4000/api/complaintaccept_delete',{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({"id":id})
+      })
+      window.location.reload()
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <>
       <div className="complains">
      
         <div className="complains_navbar"></div>
-        <div className="complain-box">
+        {complaint.map(complaint=>(
+          <div key={complaint._id} className="complain-box">
           <div className="username-box">
             <div className="username-box-marker"></div>
             <div className="username-and-email">
-              <div className="username">Username</div>
-              <div className="email">email@gmail.com</div>
+              <div className="username">{`${complaint.firstName} ${complaint.lastName}`}</div>
+              <div className="email">{complaint.complaint.type}</div>
             </div>
           </div>
           <div className="complain">
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum
-              <div className="complain-delete-box"><button >Delete</button></div>
+              {complaint.complaint.description}
+              <div className="complain-delete-box"><button onClick={()=>onAccept(complaint.id)} >Delete</button></div>
             </p>
           </div>
         </div>
+        ))}
       </div>
     </>
   );

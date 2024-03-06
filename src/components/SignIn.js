@@ -46,7 +46,6 @@ export default function SignIn() {
         // Rest of your code...
         if (response.status === 201) {
         navigate('/dashboard');
-         
         } else
          {
           // Handle other cases, e.g., show an error message

@@ -3,7 +3,7 @@
 }
 .dashbordPart1{
     width: 110px;
-    height: 742px;
+    height: 100 vh;
     flex-shrink: 0;
     border-radius: 0px 8px 8px 0px;
     background: #082777;
@@ -14,32 +14,27 @@
 .logo{
     margin-top: 25px;
 }
-.homeText{
-    margin: 0px;
-    padding: 0px;
-    color: white;
-    font-size: 10px;
-}
-.candidates{
-    margin-top: 50px;
+
+.dashboard_candidates{
+   margin-top: 50%;
     opacity: 0.4;
 }
-.employee{
+.dashboard_employee{
     opacity: 0.4;
 }
-.employeeText{
+.dashboard_employeeText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .candidatesText{
     margin: 0px;
     padding: 0px;
     color: white;
     font-size: 15px;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .dashbord-part-2{
     height: 742px;
@@ -47,10 +42,30 @@
     background: #E5EDF9;
 }
 .dashbordNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     width:100%;
     height: 6%;
-    background: #FFF;
+    background: #E5EDF9;
 box-shadow: 0px 4px 20px 0px rgba(91, 91, 91, 0.13);
+}
+.logout_button{
+margin-right: 4%;
+border: none;
+height: 80%;
+width:15%;
+}
+.logout_button button{
+    border: none;
+    height: 100%;
+    width:80%;
+    background-color: #cde0fd; 
+    border-radius: 5px;   
+}
+.logout_button button:hover{
+    background-color: #adcdfe;
+    cursor: pointer;
 }
 .dashbordOverview h1{
     color: #071C50;
@@ -165,4 +180,12 @@ justify-content: center;
     height: 100%;
     display: flex;
     margin-right: 25px;
+}
+.dashboard_home_Text {
+    color: white;
+    margin-top: -40%;
+    margin-bottom: 50%;
+}
+.dashboard_candidates{
+    padding-left: 5%;
 }
