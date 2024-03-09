@@ -6,7 +6,7 @@ const employee = require('../models/employee.js');
 const candidate = require('../models/candidate.js');
 
 // Middleware to parse JSON for specific routes
-router.use(['/api/:id/addemployee', '/api/:id/updateemployee', '/api/addcandidate', '/api/candidatescheduleint'], express.json());
+router.use(['/api/addemployee', '/api/updateemployee', '/api/addcandidate', '/api/candidatescheduleint'], express.json());
 
 router.get('/api/employees',async (req,res)=>{
   try {

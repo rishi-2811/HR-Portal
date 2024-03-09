@@ -42,9 +42,29 @@ export default function Employee() {
       
     }
   };
-  const removePopup = () => {
-    if (popup ) {
-      popup.classList.remove("open-popup");
+  const removePopup = async() => {
+    try {
+      if (popup ) {
+        popup.classList.remove("open-popup");
+      }
+      const response = await fetch('http://localhost:4000/api/addemployee', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: document.getElementById('Id').value,
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          mobile: document.getElementById('mobile').value,
+          email: document.getElementById('email').value,
+          role: document.getElementById('role').value,
+          department: document.getElementById('department').value,
+          hr_id: document.getElementById('hr_id').value,
+        }),
+      });
+    } catch (error) {
+      console.log(error)
     }
   };
   return (
@@ -352,30 +372,27 @@ export default function Employee() {
     </div>
     <div className="popup" id="popup">
         <htmlhtmlForm action="#" method="post">
-        <label htmlhtmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required/>
+        <label htmlhtmlFor="Id">Id:</label>
+        <input type="text" id="Id" name="Id" required/>
+        <label htmlhtmlFor="firstName">First Name:</label>
+        <input type="text" id="firstName" name="First Name" required/>
+        <label htmlhtmlFor="LastName">Last Name:</label>
+        <input type="text" id="lastName" name="Last Name" required/>
 
-        <label htmlhtmlFor="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required/>
-
-        <label htmlhtmlFor="age">Age:</label>
-        <input type="number" id="age" name="age" required/>
+        <label htmlhtmlFor="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="Mobile" required/>
 
         <label htmlhtmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required/>
+        <input type="email" id="email" name="Email" required/>
 
-        <label htmlhtmlFor="qualification">Educational Qualification:</label>
-        <input type="text" id="qualification" name="qualification" required/>
+        <label htmlhtmlFor="role">Role:</label>
+        <input type="text" id="role" name="Role" required/>
 
-        <label htmlhtmlFor="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
+        <label htmlhtmlFor="department">Department:</label>
+        <input type="text" id="department" name="Department" required/>
 
-        <label htmlhtmlFor="position">Position Applied htmlhtmlFor:</label>
-        <input type="text" id="position" name="position" required/>
+        <label htmlhtmlFor="Hr_Id">Enter your Id:</label>
+        <input type="text" id="hr_id" name="Hr_id" required/>
 
         <button onClick={removePopup}>Submit</button>
     </htmlhtmlForm>
