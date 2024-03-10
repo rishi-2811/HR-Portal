@@ -14,6 +14,7 @@ const requireAuthen=(req,res,next)=>
         res.status(401).json({error:'Unauthorized'});
     }
     else{
+        res.send()
         next();
     }
    })

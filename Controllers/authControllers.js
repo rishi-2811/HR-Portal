@@ -14,6 +14,7 @@ const handleErrors = (err) => {
     errors.email = 'that email is already registered';
     return errors;
   }
+  
   // validation errors
   if (err.message.includes('user validation failed')) {
     // console.log(err);
@@ -25,7 +26,7 @@ const handleErrors = (err) => {
   }
   return errors;
 }
-const maxAge=3*24*60*60
+const maxAge=1*60*60
 const createToken=(id)=>
 {
   return jwt.sign({id},secret,{
@@ -37,8 +38,14 @@ module.exports.signup_get = (req, res) => {
   res.send('signup request');
 };
 module.exports.logout = (req, res) => {
-  res.cookie('jwt','',{maxAge:1})
-  res.status(403).json({err:'Logout'})
+    try{
+      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true }).status(200).json({ message: 'Logout successful' });
+    }
+    catch(err)
+    {
+      res.status(403)
+    }
+  
 };
 
 module.exports.login_get = (req, res) => {
@@ -58,6 +65,7 @@ module.exports.signup_post = async (req, res) => {
     res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
     const errors = handleErrors(err);
+    
     res.status(400).json({ errors });
   }
 };

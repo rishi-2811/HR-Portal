@@ -1,59 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignInStyle.css";
-import { Link ,useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 export default function SignIn() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      userId: '',
-      password: '',
-    });
-  
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-       console.log('Form Data:', formData);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    userId: "",
+    password: "",
+  });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const orderedFormData = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      userId: formData.userId,
+      password: formData.password,
     };
-  
-    const handleSubmit = async (e) => {
 
-      e.preventDefault();
-      // Create a new object with properties in the desired order
-      const orderedFormData = {
-        
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        userId: formData.userId,
-        password: formData.password,
-        
-      };
-    
-      try {
-        const response = await axios.post('http://localhost:4000/signup', orderedFormData, {
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/signup",
+        orderedFormData,
+        {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-        });
-       
-        // Rest of your code...
-        if (response.status === 201) {
-        navigate('/dashboard');
-        } else
-         {
-          // Handle other cases, e.g., show an error message
         }
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        // Handle error, e.g., show an error message
+      );
+
+      if (response.status === 201) {
+        navigate("/dashboard");
+      } else {
+        setErrorMessage("Unexpected error occurred. Please try again11.");
       }
+    }
+     catch (error) {
+      if (error.response) {
+        // Server responded with an error
+        if (error.message==='that email is already registered') {
+          // Email duplication error
+          setErrorMessage("Email already exists. Please use a different email.");
+        } else {
+          // Other server errors
+          setErrorMessage("Email Already Exists");
+        }
+      } else {
+        // Some other error occurred
+        setErrorMessage("An unexpected error occurred. Please try again.");
+      }
+    }
+  
     };
     
   return (
@@ -280,6 +290,7 @@ export default function SignIn() {
               </div>
               <div className="form-container_signup">
               <form className="signin_input" onSubmit={handleSubmit}>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
             <input
               className="SignInInput"
               type="text"
