@@ -1,8 +1,25 @@
 import React,{useState,useEffect} from "react";
 import "./Dashbord_style.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Dashbord() {
+  const navigate=useNavigate();  
+  const handleLogout = async () => {
+    try {
+      const response=await axios.post('http://localhost:4000/logout')
+      if(response.status===200)
+      {
+      navigate('/');
+      }
+
+    } catch (error) {
+      console.error('Logout error:', error.message);
+    }
+  };
+
+  
+
   const [employeeCount, setEmployeeCount] = useState(0)
   const [candidateCount, setCandidateCount] =useState(0)
   const [leaveCount, setLeaveCount] =useState(0)
@@ -10,8 +27,12 @@ export default function Dashbord() {
   const [complaintcount, setcomplaintcount]=useState(0)
   const [interviewcount, setinterviewcount]=useState(0)
   useEffect(() => {
+
     const fetchData = async () => {
       try {
+       
+        // Call the handleLogout function when the component mounts
+       
         const countResponse = await fetch('http://localhost:4000/api/employeecount');
         const countData = await countResponse.json();
         setEmployeeCount(countData)
@@ -336,7 +357,7 @@ export default function Dashbord() {
         <div className="dashbord-part-2">
           <div className="dashbordNavbar">
             <div className="logout_button">
-              <button>Log Out</button>
+              <button onClick={handleLogout}>Log Out</button>
             </div>
           </div>
           
