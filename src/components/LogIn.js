@@ -1,8 +1,8 @@
-/*eslint-disable react/jsx-no-undef*/
 import React, { useState } from "react";
 import "./LogInStyle.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -10,16 +10,19 @@ export default function LogIn() {
     email: "",
     password: "",
   });
+  // Ensure that errors state is initialized with default values
   const [errors, setErrors] = useState({ email: "", password: "" });
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear the error for the corresponding input field when user modifies it
     setErrors({ ...errors, [e.target.name]: "" });
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
 
     try {
       const response = await axios.post("http://localhost:4000/login", formData, {
@@ -28,26 +31,30 @@ export default function LogIn() {
         },
         withCredentials: true,
       });
-
+  
       if (response.status === 200) {
-        console.log("Consoling");
         navigate("/dashboard");
       } else {
-        // Handle other cases, e.g., show an error message
+        // Handle other status codes
+        setErrorMessage("Unexpected error occurred. Please try again.");
       }
     } catch (error) {
       if (error.response) {
-        // Server responded with an error (e.g., validation error)
-        setErrors(error.response.data.errors);
+        // Server responded with an error
+        if (error.response.status === 400) {
+          // Invalid credentials
+          setErrorMessage("Invalid email or password. Please try again.");
+        } else {
+          // Other server errors
+          setErrorMessage("An unexpected error occurred. Please try again.");
+        }
       } else {
         // Some other error occurred
-        setErrors({
-          email: "An unexpected error occurred. Please try again.",
-          password: "",
-        });
+        setErrorMessage("An unexpected error occurred. Please try again.");
       }
     }
   };
+  
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -273,6 +280,8 @@ export default function LogIn() {
                 </Link>
               </div>
               <form className="login-form" onSubmit={handleSubmit}>
+              {errorMessage && <div className="error-message">{errorMessage}</div>}
+
                 <div className="username">Email</div>
                 <div className="form-container_login">
                   <input

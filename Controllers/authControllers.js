@@ -65,6 +65,7 @@ module.exports.signup_post = async (req, res) => {
     res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
     const errors = handleErrors(err);
+    
     res.status(400).json({ errors });
   }
 };
