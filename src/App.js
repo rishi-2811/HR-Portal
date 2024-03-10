@@ -11,9 +11,9 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Candidates from './components/Candidates';
 import Employee from './components/Employee';
 import InterviewScheduled from './components/InterviewScheduled';
-import ScaleLoader from "react-spinners/ClipLoader";
 import { useState,useEffect } from 'react';
 import { set } from 'mongoose';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 
@@ -38,7 +38,7 @@ function App() {
     <div className='app-container'>
     {
       loading?
-      <ScaleLoader
+      <ClipLoader
       color={'#36d7b7'}
       loading={loading}
       size={150}
