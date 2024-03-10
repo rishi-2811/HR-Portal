@@ -24,29 +24,11 @@ import ClipLoader from "react-spinners/ClipLoader";
 } from "react-router-dom"; */
 
 function App() {
-  const [loading,setLoading]=useState(false);
-  useEffect(()=>
-  {
-    setLoading(true)
-    setTimeout(()=>{
-     setLoading(false)
-    },500)
-  },[])
-
+  
   return (
     <>
     <div className='app-container'>
-    {
-      loading?
-      <ClipLoader
-      color={'#36d7b7'}
-      loading={loading}
-      size={150}
-      aria-label="Loading Spinner"
-      data-testid="loader"
-      class='Spinner'
-      className='spinner-container'
-    />:
+    
     <Routes>
       
       <Route path="/signin" element={<SignIn/>}/>
@@ -67,7 +49,7 @@ function App() {
 
       <Route path="/interview_scheduled" element={<InterviewScheduled/>}/>
     </Routes>
-    }
+    
  </div>
     
     
