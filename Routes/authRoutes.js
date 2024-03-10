@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const authControllers=require('../Backend/Controllers/authControllers')
+const authControllers=require('../Controllers/authControllers')
 
 router.get('/signup',authControllers.signup_get)
 router.post('/signup',authControllers.signup_post)
