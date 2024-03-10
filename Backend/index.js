@@ -7,16 +7,15 @@ const { requireAuthen } = require("./Authmiddleware/authMiddleware");
 dotenv.config();
 
 const cors = require("cors");
+
 const URI = process.env.URI;
 
+const run = async () => {
+  await mongoose.connect(URI);
+  console.log("Connected to myDB");
+};
 
-try{
-mongoose.connect(URI).then(console.log("Connected to MongoDB"))
-}catch(err)
-{
-  console.log(err)
-}
-const db=mongoose.connection
+run().catch((err) => console.error(err));
 
 app.use(
   cors({
