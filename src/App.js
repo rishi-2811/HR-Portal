@@ -11,6 +11,11 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Candidates from './components/Candidates';
 import Employee from './components/Employee';
 import InterviewScheduled from './components/InterviewScheduled';
+import ScaleLoader from "react-spinners/ClipLoader";
+import { useState,useEffect } from 'react';
+import { set } from 'mongoose';
+
+
 
 /* import {
   BrowserRouter as Router,
@@ -19,10 +24,29 @@ import InterviewScheduled from './components/InterviewScheduled';
 } from "react-router-dom"; */
 
 function App() {
+  const [loading,setLoading]=useState(false);
+  useEffect(()=>
+  {
+    setLoading(true)
+    setTimeout(()=>{
+     setLoading(false)
+    },500)
+  },[])
+
   return (
     <>
- 
-    
+    <div className='app-container'>
+    {
+      loading?
+      <ScaleLoader
+      color={'#36d7b7'}
+      loading={loading}
+      size={150}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+      class='Spinner'
+      className='spinner-container'
+    />:
     <Routes>
       
       <Route path="/signin" element={<SignIn/>}/>
@@ -43,6 +67,9 @@ function App() {
 
       <Route path="/interview_scheduled" element={<InterviewScheduled/>}/>
     </Routes>
+    }
+ </div>
+    
     
     
     </>
