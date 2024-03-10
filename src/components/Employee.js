@@ -20,7 +20,7 @@ export default function Employee() {
   let popup = document.getElementById("popup");
   const onDelete= async(ID)=>{
       try {
-        const response=await fetch('http://localhost:4000/api/deleteemployee',{
+        const response =await fetch('http://localhost:4000/api/deleteemployee',{
           method:"POST",
           headers:{
             "Content-Type":"application/json"
@@ -352,30 +352,33 @@ export default function Employee() {
     </div>
     <div className="popup" id="popup">
         <htmlhtmlForm action="#" method="post">
-        <label htmlhtmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required/>
-
-        <label htmlhtmlFor="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required/>
-
-        <label htmlhtmlFor="age">Age:</label>
-        <input type="number" id="age" name="age" required/>
+        <label htmlhtmlFor="First_name">First Name</label>
+        <input type="text" id="First_name" name="First_name" required/>
+        
+        <label htmlhtmlFor="Last_name">Last Name</label>
+        <input type="text" id="Last_name" name="Last_name" required/>
+        
+        <label htmlhtmlFor="User_id">Employee ID</label>
+        <input type="text" id="User_id" name="User_id" required/>
 
         <label htmlhtmlFor="email">Email:</label>
         <input type="email" id="email" name="email" required/>
 
         <label htmlhtmlFor="qualification">Educational Qualification:</label>
         <input type="text" id="qualification" name="qualification" required/>
+        
 
-        <label htmlhtmlFor="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
+        <label htmlhtmlFor="Mobile_number">Mobile NO.:</label>
+        <input type="number" id="Mobile_number" name="Mobile_number" required/>   
 
-        <label htmlhtmlFor="position">Position Applied htmlhtmlFor:</label>
-        <input type="text" id="position" name="position" required/>
+        <label htmlhtmlFor="role">Role: </label>
+        <input type="text" id="role" name="role" required/>
+        
+        <label htmlhtmlFor="department">Department: </label>
+        <input type="text" id="department" name="department" required/>
+        
+        <label htmlhtmlFor="hr_id">HR ID: </label>
+        <input type="text" id="hr_id" name="hr_id" required/>
 
         <button onClick={removePopup}>Submit</button>
     </htmlhtmlForm>

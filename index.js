@@ -9,8 +9,8 @@ dotenv.config();
 const cors = require("cors");
 const URI = process.env.URI;
 
-const run = async () => {
-  await mongoose.connect(URI);
+const run =  () => {
+   mongoose.connect("mongodb+srv://mishrarishi2911:Rishi2811@cluster0.3ndhk2d.mongodb.net/test/");
   console.log("Connected to myDB");
 };
 
