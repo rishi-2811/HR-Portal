@@ -25,7 +25,7 @@ export default function LogIn() {
   
 
     try {
-      const response = await axios.post("http://localhost:4000/login", formData, {
+      const response = await axios.post("https://hr-portal-vnlr.onrender.com/login", formData, {
         headers: {
           "Content-Type": "application/json",
         },

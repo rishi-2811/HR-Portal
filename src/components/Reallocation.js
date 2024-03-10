@@ -6,7 +6,7 @@ export default function Reallocation() {
   useEffect(()=>{
      const fetchdata=async()=>{
       try {
-        const response=await fetch('http://localhost:4000/api/relocs')
+        const response=await fetch('https://hr-portal-vnlr.onrender.com/api/relocs')
         const data=await response.json()
         setreloc(data)
       } catch (error) {
@@ -17,7 +17,7 @@ export default function Reallocation() {
   },[])
   const onAccept=async(id)=>{
     try {
-      const response=await fetch('http://localhost:4000/api/relocaccept_delete',{
+      const response=await fetch('https://hr-portal-vnlr.onrender.com/api/relocaccept_delete',{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

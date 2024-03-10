@@ -7,7 +7,7 @@ export default function Dashbord() {
   const navigate=useNavigate();  
   const handleLogout = async () => {
     try {
-      const response=await axios.post('http://localhost:4000/logout')
+      const response=await axios.post('https://hr-portal-vnlr.onrender.com/logout')
       if(response.status===200)
       {
       navigate('/');
@@ -33,22 +33,22 @@ export default function Dashbord() {
        
         // Call the handleLogout function when the component mounts
        
-        const countResponse = await fetch('http://localhost:4000/api/employeecount');
+        const countResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/employeecount');
         const countData = await countResponse.json();
         setEmployeeCount(countData)
-        const cResponse = await fetch('http://localhost:4000/api/candidatecount');
+        const cResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/candidatecount');
         const cData = await cResponse.json();
         setCandidateCount(cData)
-        const coResponse = await fetch('http://localhost:4000/api/leavecount');
+        const coResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/leavecount');
         const coData = await coResponse.json();
         setLeaveCount(coData)
-        const couResponse = await fetch('http://localhost:4000/api/reloccount');
+        const couResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/reloccount');
         const couData = await couResponse.json();
         setRelocCount(couData)
-        const counResponse = await fetch('http://localhost:4000/api/complaintcount');
+        const counResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/complaintcount');
         const counData = await counResponse.json();
         setcomplaintcount(counData)
-        const CounResponse = await fetch('http://localhost:4000/api/candidateintschedule');
+        const CounResponse = await fetch('https://hr-portal-vnlr.onrender.com/api/candidateintschedule');
         const CounData = await CounResponse.json();
         setinterviewcount(CounData)
       } catch (error) {

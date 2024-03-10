@@ -19,7 +19,7 @@ run().catch((err) => console.error(err));
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000"||"https://hr-portal-1.onrender.com",
     credentials: true,
   })
 );

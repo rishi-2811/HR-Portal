@@ -6,7 +6,7 @@ export default function InterviewScheduled() {
   useEffect(()=>{
     const fetchdata=async()=>{
       try {
-        const response=await fetch('http://localhost:4000/api/candidateintscheduled')
+        const response=await fetch('https://hr-portal-vnlr.onrender.com/api/candidateintscheduled')
         const data=await response.json()
         setinterview(data)
       } catch (error) {

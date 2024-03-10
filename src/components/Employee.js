@@ -7,7 +7,7 @@ export default function Employee() {
   useEffect(()=>{
     const fetchEmployees = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/employees');
+        const response = await fetch('https://hr-portal-vnlr.onrender.com/api/employees');
         const data = await response.json();
         setEmployees(data);
       } catch (error) {
@@ -20,7 +20,7 @@ export default function Employee() {
   let popup = document.getElementById("popup");
   const onDelete= async(ID)=>{
       try {
-        const response =await fetch('http://localhost:4000/api/deleteemployee',{
+        const response =await fetch('https://hr-portal-vnlr.onrender.com/api/deleteemployee',{
           method:"POST",
           headers:{
             "Content-Type":"application/json"
@@ -47,7 +47,7 @@ export default function Employee() {
       if (popup ) {
         popup.classList.remove("open-popup");
       }
-      const response = await fetch('http://localhost:4000/api/addemployee', {
+      const response = await fetch('https://hr-portal-vnlr.onrender.com/api/addemployee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

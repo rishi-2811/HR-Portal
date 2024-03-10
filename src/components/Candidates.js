@@ -6,7 +6,7 @@ export default function Candidates() {
   useEffect(()=>{
     const fetchCandidates = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/candidates');
+        const response = await fetch('https://hr-portal-vnlr.onrender.com/api/candidates');
         const data = await response.json();
         setCandidates(data);
       } catch (error) {
@@ -19,7 +19,7 @@ export default function Candidates() {
   let popup = document.getElementById("popup");
   const onAccept=async(ID)=>{
     try {
-      const response=await fetch('http://localhost:4000/api/candidatescheduleint',{
+      const response=await fetch('https://hr-portal-vnlr.onrender.com/api/candidatescheduleint',{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -33,7 +33,7 @@ export default function Candidates() {
   }
   const onReject=async(ID)=>{
     try {
-      const response=await fetch('http://localhost:4000/api/deletecandidate',{
+      const response=await fetch('https://hr-portal-vnlr.onrender.com/api/deletecandidate',{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

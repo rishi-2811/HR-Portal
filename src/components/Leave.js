@@ -6,7 +6,7 @@ export default function Leave() {
   useEffect(()=>{
      const fetchData=async()=>{
       try {
-        const response=await fetch('http://localhost:4000/api/leaves')
+        const response=await fetch('https://hr-portal-vnlr.onrender.com/api/leaves')
         const data=await response.json()
         console.log('Fetched data:', data);
         setleave(data)
@@ -19,7 +19,7 @@ export default function Leave() {
   },[])
   const onAccept=async(id)=>{
     try {
-      const response=await fetch('http://localhost:4000/api/leaveaccept_delete',{
+      const response=await fetch('https://hr-portal-vnlr.onrender.com/api/leaveaccept_delete',{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
