@@ -83,7 +83,7 @@ justify-content: space-evenly;
 }
 .employeeBlock{
     display: flex;
-    width: 92%;
+    width: 93%;
     height: 13%;
     margin-left: 3%;
     align-items: center;
@@ -92,6 +92,9 @@ justify-content: space-evenly;
 }
 .employeeBlock svg{
     margin-left: 15px;
+}
+.employeeBlockNameEmail{
+    width:21%
 }
 .employeeBlockNameEmail h2{
     color: #071C50;
