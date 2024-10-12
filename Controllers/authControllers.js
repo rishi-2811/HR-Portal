@@ -28,7 +28,7 @@ const handleErrors = (err) => {
 }
 const maxAge=1*60*60*24
 const createToken=(id)=>
-{ console.log(secret)
+{ 
   return jwt.sign({id},secret,{
     expiresIn:maxAge
   })
@@ -39,7 +39,7 @@ module.exports.signup_get = (req, res) => {
 };
 module.exports.logout = (req, res) => {
     try{
-      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true }).status(200).json({ message: 'Logout successful' });
+      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true ,secure: true}).status(200).json({ message: 'Logout successful' });
     }
     catch(err)
     {
@@ -59,7 +59,7 @@ module.exports.signup_post = async (req, res) => {
     const user = await User.create({ firstName, lastName, email, userId, password });
   
     const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, secure: true});
     console.log('User Created successfully');
     res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
@@ -77,7 +77,7 @@ module.exports.login_post = async (req, res) => {
   { 
       const user=await User.login(email,password);
       const token=createToken(user._id);
-      res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000})
+      res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000,secure: true})
       res.status(200).json({user: user._id})
   }
 
@@ -100,14 +100,14 @@ module.exports.getUserFromJWT = async (req, res) => {
   }
       
       const decoded = jwt.verify(token, secret);
-      console.log(decoded)
+      
       const user = await User.findById(decoded.id).select('firstName lastName');
-      console.log(user)
+      
       if (!user) {
-          console.log("error")
+          
           return res.status(404).json({ message: 'User not found' });
       }
-      console.log("success")
+    
       return res.status(200).json({ name: `${user.firstName} ${user.lastName}` });
   } catch (err) {
       return res.status(401).json({ message: 'Unauthorized or Invalid token' });
