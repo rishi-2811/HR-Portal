@@ -1,7 +1,7 @@
 import './login.css'
 import { useState } from 'react'
-import LoginForm from '../../components/login.js'
-import SignUp from '../../components/signup.js'
+import LoginForm from '../../components/login'
+import SignUp from '../../components/signup'
 
 export function Login(){
     const [isLogin,setlogin]=useState(true)
