@@ -11,7 +11,6 @@ app.use(cookieParser());
 const cors = require("cors");
 
 const URI = process.env.URI;
-console.log(URI)
 
 const run = async () => {
   await mongoose.connect(URI);
@@ -39,7 +38,7 @@ app.use("/", require("./Routes/authRoutes"));
 app.use("/", require("./Routes/routes"));
 
 
-
-app.listen(process.env.port || 4000, function () {
-  console.log("listening to requests");
+const port = process.env.PORT ;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
