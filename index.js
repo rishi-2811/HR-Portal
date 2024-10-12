@@ -19,12 +19,10 @@ const run = async () => {
 
 run().catch((err) => console.error(err));
 
-app.use(
-  cors({
-    origin: "http://localhost:3000"||"https://bluebird-hr.onrender.com" ||"https://bluebirdhr.vercel.app/",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://bluebirdhr.vercel.app'], 
+  credentials: true,
+}));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   console.log("\nNew Request Made :");
