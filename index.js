@@ -5,10 +5,13 @@ const app = express();
 const dotenv = require("dotenv");
 const { requireAuthen } = require("./Authmiddleware/authMiddleware");
 dotenv.config();
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 const cors = require("cors");
 
 const URI = process.env.URI;
+console.log(URI)
 
 const run = async () => {
   await mongoose.connect(URI);
@@ -24,7 +27,6 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-//  error check
 app.use((req, res, next) => {
   console.log("\nNew Request Made :");
   console.log("Host : ", req.hostname);
@@ -36,8 +38,7 @@ app.use((req, res, next) => {
 app.use("/", require("./Routes/authRoutes"));
 app.use("/", require("./Routes/routes"));
 
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
+
 
 app.listen(process.env.port || 4000, function () {
   console.log("listening to requests");

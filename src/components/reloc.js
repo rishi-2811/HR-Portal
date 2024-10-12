@@ -1,17 +1,18 @@
+
 import { api } from '../constants/constant'
 import { useState } from 'react'
 import Loading from './Loading'
 
 
-export default function LeaveItem(props){
-    const {firstName,lastName,role,duration,reason,id}=props
+export default function RelocationItem(props){
+    const {firstName,lastName,role,start,end,reason,id}=props
     const [message,setmessage]=useState("")
     const [error,seterror]=useState("")
     const [loading,setloading]=useState(false)
     const handleClick=async(id,string)=>{
           try {
             setloading(true)
-            const res=await fetch(api+'leaveaccept_delete',{
+            const res=await fetch(api+'relocaccept_delete',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -41,7 +42,7 @@ export default function LeaveItem(props){
                                     <span>{role}</span>
                                 </div>
                                 <div className="text-2">
-                                    <span><strong>{duration}</strong></span>
+                                    <span><strong>{start} ➡️ {end}</strong></span>
                                 </div>
                                 <div className="text-2">
                                     <span>Reason: <strong>{reason}</strong></span>
@@ -57,3 +58,4 @@ export default function LeaveItem(props){
         </div>
     )
 }
+

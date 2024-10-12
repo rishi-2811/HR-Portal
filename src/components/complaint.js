@@ -1,17 +1,18 @@
+
 import { api } from '../constants/constant'
 import { useState } from 'react'
 import Loading from './Loading'
 
 
-export default function LeaveItem(props){
-    const {firstName,lastName,role,duration,reason,id}=props
+export default function ComplaintItem(props){
+    const {firstName,lastName,role,type,reason,id}=props
     const [message,setmessage]=useState("")
     const [error,seterror]=useState("")
     const [loading,setloading]=useState(false)
-    const handleClick=async(id,string)=>{
+    const handleClick=async(id)=>{
           try {
             setloading(true)
-            const res=await fetch(api+'leaveaccept_delete',{
+            const res=await fetch(api+'complaintaccept_delete',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -19,7 +20,7 @@ export default function LeaveItem(props){
                 body:JSON.stringify({id:id})
               })
               const data=await res.json()
-              setmessage("Request "+string+" Successfully")
+              setmessage("Complaint Acknowledged Successfully")
               setloading(false)
               console.log(data)
           } catch (error) {
@@ -41,14 +42,14 @@ export default function LeaveItem(props){
                                     <span>{role}</span>
                                 </div>
                                 <div className="text-2">
-                                    <span><strong>{duration}</strong></span>
+                                    <span><strong>{type}</strong></span>
                                 </div>
                                 <div className="text-2">
                                     <span>Reason: <strong>{reason}</strong></span>
                                 </div>
                             </div>
-                            <img src='/logos/yes.png' alt="schedule interview" onClick={()=>{handleClick(id,"Accepted")}}/>
-                            <img src='/logos/no.png' alt="delete" onClick={()=>{handleClick(id,"Rejected")}}/>
+                            <img src='/logos/yes.png' alt="schedule interview" onClick={()=>{handleClick(id)}}/>
+                            <img src='/logos/no.png' alt="delete" onClick={()=>{handleClick(id)}}/>
                     </>
                 )
             }
@@ -57,3 +58,6 @@ export default function LeaveItem(props){
         </div>
     )
 }
+
+
+

@@ -1,0 +1,22 @@
+.emp-form{
+    width: 100%;
+    max-width: 550px;
+    margin:3em auto;
+}
+
+.emp-form input{
+    width: 100%;
+    background-color: #DDEAFB;
+    color:#082777;
+    padding: 0.5em 0.7em;
+    font-size: 1rem;
+    border: #4B93E7 1px solid;
+    border-radius: 8px;
+    font-family: inherit;
+    letter-spacing: 1.1px;
+    margin: 0.6em 0em;
+}
+
+.emp-form button{
+    width: 100%;
+}

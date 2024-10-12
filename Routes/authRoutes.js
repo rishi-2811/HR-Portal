@@ -7,5 +7,6 @@ router.post('/signup',authControllers.signup_post)
 router.get('/login',authControllers.login_get)
 router.post('/login',authControllers.login_post)
 router.post('/logout',authControllers.logout)
+router.get('/getUserFromJWT',authControllers.getUserFromJWT)
 
 module.exports=router;

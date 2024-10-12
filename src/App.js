@@ -1,60 +1,113 @@
-/*eslint-disable react/jsx-no-undef*/
-
-import Login from './components/LogIn'
-import SignIn from './components/SignIn'
-import Dashbord from './components/Dashbord'
-import Complains from './components/Complains'
-import './App.css';
-import Leave from './components/Leave';
-import Reallocation from './components/Reallocation';
-import {BrowserRouter, Route, Routes } from 'react-router-dom';
-import Candidates from './components/Candidates';
-import Employee from './components/Employee';
-import InterviewScheduled from './components/InterviewScheduled';
-import { useState,useEffect } from 'react';
-import { set } from 'mongoose';
-import ClipLoader from "react-spinners/ClipLoader";
-
-
-
-/* import {
-  BrowserRouter as Router,
-  
-  Route,
-} from "react-router-dom"; */
-
+import { BrowserRouter,Route,Routes } from "react-router-dom";
+import { Login } from "./pages/login/login";
+import Dashboard from "./pages/dashboard/dashboard";
+import Employee from "./pages/employee/employee";
+import Candidates from "./pages/candidates/candidate";
+import Relocation from "./pages/reloc/reloc";
+import Complaint from "./pages/complaint/complaint";
+import Leave from "./pages/leave/leave";
+import Interview from "./pages/interview/interview";
+import AddEmployee from "./pages/forms/addemployee";
+import EditEmployee from "./pages/forms/editemployee";
+import ScheduleInterview from "./pages/forms/interview";
+import {PrivateRoute} from "./components/private";
+import SearchResults from "./pages/employee/searchresults";
 function App() {
-  
   return (
-    <>
-    <div className='app-container'>
-    
-    <Routes>
-      
-      <Route path="/signin" element={<SignIn/>}/>
-    
-      <Route path="/" element={<Login/>}/>
-      
-      <Route path="/dashboard" element={<Dashbord/>} />
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute >
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/employee"
+          element={
+            <PrivateRoute >
+              <Employee />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/candidate"
+          element={
+            <PrivateRoute >
+              <Candidates />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/reloc"
+          element={
+            <PrivateRoute >
+              <Relocation />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/complaint"
+          element={
+            <PrivateRoute >
+              <Complaint />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/leave"
+          element={
+            <PrivateRoute >
+              <Leave />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/interview"
+          element={
+            <PrivateRoute >
+              <Interview />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/addemployee"
+          element={
+            <PrivateRoute >
+              <AddEmployee />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/editemployee"
+          element={
+            <PrivateRoute >
+              <EditEmployee />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/scheduleinterview"
+          element={
+            <PrivateRoute >
+              <ScheduleInterview />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/searchresults"
+          element={
+            <PrivateRoute >
+              <SearchResults />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
 
-      <Route path="/employee" element={<Employee/>} />
-
-      <Route path="/candidates" element={<Candidates/>} />
-
-      <Route path="/leave" element={<Leave/>} />
-
-      <Route path="/relocation" element={<Reallocation/>} />
-
-      <Route path="/complains" element={<Complains/>} />
-
-      <Route path="/interview_scheduled" element={<InterviewScheduled/>}/>
-    </Routes>
-    
- </div>
-    
-    
-    
-    </>
+    </BrowserRouter>
   );
 }
 

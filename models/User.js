@@ -14,11 +14,10 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "Please Enter an email"],
-    validate: [isEmail, "Please Enter a valid email"],
     unique: true,
   },
   userId: {
-    // Update the property name here
+    
     type: String,
     required: [true, "Please enter a User Id"],
   },
@@ -34,7 +33,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// static method to login user
+
 
 userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
@@ -48,11 +47,7 @@ userSchema.statics.login = async function (email, password) {
   throw Error("Incorrect email");
 };
 
-// userSchema.post('save',function(doc,next)
-// {
-//   console.log('user is created',doc)
-//   next()
-// })
+
 
 const User = mongoose.model("user", userSchema);
 module.exports = User;

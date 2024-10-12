@@ -1,5 +1,19 @@
 const mongoose=require('mongoose')
 
+const interviewSchema = new mongoose.Schema({
+  hasInterview: {
+    type: Boolean,
+    default: false,
+  },
+  date: {
+    type: String,
+  },
+  assignedTo: {
+    type: String,
+  },
+});
+
+
 const candidateschema= new mongoose.Schema({
     id: {
         type: String,
@@ -27,12 +41,10 @@ const candidateschema= new mongoose.Schema({
         type: String,
         required: true,
       },
-      hasInterview: {
-        type: Boolean,
-        required: false,
-        default: false,
-      }
+      interview: interviewSchema
     })
+
+    
 
     const candidatemodel=mongoose.model('candidates',candidateschema)
     module.exports=candidatemodel

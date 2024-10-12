@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+}
+
+.loginContainer{
+    max-width:900px;
+    margin:3em auto;
+    width:100%;
+}
+
+.loginHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#082777;
+}
+
+.loginHeader img{
+    width: 1.6em;
+}
+
+.loginHeader h1{
+    margin-left:0.3em;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.innerLoginContainer{
+    margin-top: 3em;
+    display: flex;
+    width: 100%;
+    gap:5.6em;
+    justify-content: center;
+}
+
+.innerLoginContainer img{
+    width: 40%;
+}
+
+.Login{
+    width:45%;
+}
+
+.Login h1{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color:#4B93E7;
+    display: flex;
+    align-items: center;
+    gap:2em;
+    cursor: pointer;
+}
+
+.important{
+    font-size: 2.8rem;
+    font-weight: 600;
+    display: block;
+    border-bottom: #F7AC25 5px solid;
+}
+
+.Login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 1.4em;
+    gap:1.3em;
+}
+
+.inputContainer{
+    position: relative;
+}
+
+ label{
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #082777;
+    background-color: #DDEAFB;
+}
+
+.Login input{
+    width: 80%;
+    background-color: #DDEAFB;
+    color:#082777;
+    padding: 0.5em 0.7em;
+    font-size: 1rem;
+    border: #4B93E7 1px solid;
+    border-radius: 8px;
+    font-family: inherit;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+}
+
+.inputContainer:focus-within label{
+    display: block;
+}
+.password{
+    width: 80%;
+    background-color: #DDEAFB;
+    color:#4B93E7;
+    border: #4B93E7 1px solid;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password input{
+    width:75%;
+    border:none;
+    outline: none;
+}
+
+.password img{
+    width:1.7em;
+    margin-right: 0.6em;
+    cursor: pointer;
+}
+ input:focus{
+    outline: none;
+ }
+button{
+    width:80%;
+    background: #F7AC25;
+    padding: 0.6em 1em;
+    color:white;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+@media (max-width:550px){
+    .innerLoginContainer > img{
+        display: none;
+    }
+    .Login{
+        width: 100%;
+        margin: auto auto;
+    }
+    .innerLoginContainer{
+        padding: 1.5em;
+    }
+    .loginHeader{
+        justify-content: flex-start;
+        margin: 1.5em;
+    }
+}

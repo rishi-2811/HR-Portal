@@ -24,6 +24,9 @@ const leaveRequestSchema = new mongoose.Schema({
     newLocation: {
       type: String,
     },
+    reason: {
+      type: String,
+    },
   });
   
   const complaintSchema = new mongoose.Schema({
@@ -57,17 +60,12 @@ const employeeschema= new mongoose.Schema({
       email: {
         type: String,
         required: true,
-        unique: true,
       },
       mobile: {
         type: String,
         required: true,
       },
-      password: {
-        type: String,
-        required: false,
-        select: false,
-      },
+      
       role: {
         type: String,
         required: true,
@@ -75,10 +73,6 @@ const employeeschema= new mongoose.Schema({
       department: {
         type: String,
         required: true,
-      },
-      hr_id: {
-        type: String,
-        required: false,
       },
       leaveRequest: leaveRequestSchema,
       relocationRequest: relocationRequestSchema,
