@@ -33,7 +33,7 @@ export default function LoginForm(){
             console.log(error)
             setloading(false)
             seterror('An error occurred. Please try again.');
-            setTimeout(()=>{window.location.reload()},1000)
+            setTimeout(()=>{window.location.reload()},1000000)
         }
     }
 
