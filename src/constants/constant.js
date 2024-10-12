@@ -1,2 +1,2 @@
-export const api='http://localhost:4000/api/'
-export const api2='http://localhost:4000/'
+export const api='https://bluebird-hr.onrender.com/api/'
+export const api2='https://bluebird-hr.onrender.com/'
