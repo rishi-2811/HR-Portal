@@ -1,6 +1,6 @@
 import './login.css'
 import { useState } from 'react'
-import LoginForm from '../../components/login'
+import LoginForm from '../../components/LogIn'
 import SignUp from '../../components/signup'
 
 export function Login(){
