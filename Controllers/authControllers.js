@@ -5,6 +5,13 @@ const dotenv=require('dotenv');
 dotenv.config()
 const secret=process.env.secret;
 
+const cookieOptions = {
+  httpOnly: true,
+  maxAge: maxAge * 1000,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
+};
+
 
 const handleErrors = (err) => {
   console.log(err.message, err.code);
@@ -59,7 +66,7 @@ module.exports.signup_post = async (req, res) => {
     const user = await User.create({ firstName, lastName, email, userId, password });
   
     const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, secure: false, sameSite: 'None'});
+    res.cookie('jwt', token, cookieOptions);
     console.log('User Created successfully');
     res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
@@ -77,7 +84,7 @@ module.exports.login_post = async (req, res) => {
   { 
       const user=await User.login(email,password);
       const token=createToken(user._id);
-      res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000,secure: false, sameSite: 'None'})
+      res.cookie('jwt',token,cookieOptions)
       res.status(200).json({user: user._id})
   }
 
