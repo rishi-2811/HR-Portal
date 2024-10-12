@@ -21,7 +21,7 @@ export function Header(){
              })
              
              if(res.ok){
-                 navigate('/')
+                 navigate('/login')
              }
          } catch (error) {
             seterror("Internal Servor Error")

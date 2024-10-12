@@ -8,9 +8,9 @@ export default function Navbar(props){
     const [isemp,setemp]=useState(props.array[1])
     return(
         <div className="navbar">
-            <Link to={'/dashboard'}><img src={`${process.env.PUBLIC_URL}/logos/l2.svg`} alt="logo" className="logo"/></Link>
+            <Link to={'/'}><img src={`${process.env.PUBLIC_URL}/logos/l2.svg`} alt="logo" className="logo"/></Link>
             <div className="icons">
-                <Link to={"/dashboard"}>
+                <Link to={"/"}>
                     <div className={isHome && "special"} onClick={()=>{sethome(true) ;setcand(false); setemp(false)}}>
                         <img src={`${process.env.PUBLIC_URL}/logos/home.svg`} alt="home"/>
                         <p>Home</p>

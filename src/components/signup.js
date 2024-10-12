@@ -22,7 +22,7 @@ export default function SignUp(){
             console.log(data)
             if(res.ok){
                 setmessage("Sign Up Successfull")
-                setTimeout(()=>{navigate('/dashboard')},1000)
+                setTimeout(()=>{navigate('/')},1000)
                 
             }
             else{

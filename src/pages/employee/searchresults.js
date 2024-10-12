@@ -15,6 +15,7 @@ export default function SearchResults(){
     const [loading,setloading]=useState(true)
     const fetchdata=async()=>{
         try {
+            
             const res=await fetch(api+'search',{
                 method:'POST',
                 headers:{
@@ -32,7 +33,7 @@ export default function SearchResults(){
     useEffect(()=>{
         fetchdata()
         
-    },[])
+    })
     const employeemodel=employee.map((item)=>{
         return (<EmployeeItem key={item.id} id={item.id} firstName={item.firstName} lastName={item.lastName} 
             role={item.role} department={item.department}

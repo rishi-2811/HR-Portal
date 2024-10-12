@@ -23,7 +23,7 @@ export default function LoginForm(){
             console.log(data)
             if(res.ok){
                 setmessage("Log In Successfull")
-                setTimeout(()=>{navigate('/dashboard')},1000)
+                setTimeout(()=>{navigate('/')},1000)
                 
             }
             else{

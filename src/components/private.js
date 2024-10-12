@@ -43,7 +43,7 @@ export const PrivateRoute = ({  children }) => {
 
   return (
     <NameContext.Provider value={name}>
-      {isAuthenticated ? children : <Navigate to="/" />}
+      {isAuthenticated ? children : <Navigate to="/login" />}
     </NameContext.Provider>
   )
 };
