@@ -21,7 +21,7 @@ run().catch((err) => console.error(err));
 
 app.use(
   cors({
-    origin: "http://localhost:3000"||"https://bluebird-hr.onrender.com",
+    origin: "http://localhost:3000"||"https://bluebird-hr.onrender.com" ||"https://bluebirdhr.vercel.app/",
     credentials: true,
   })
 );
