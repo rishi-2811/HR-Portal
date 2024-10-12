@@ -5,12 +5,7 @@ const dotenv=require('dotenv');
 dotenv.config()
 const secret=process.env.secret;
 
-const cookieOptions = {
-  httpOnly: true,
-  maxAge: maxAge * 1000,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
-};
+
 
 
 const handleErrors = (err) => {
@@ -40,6 +35,13 @@ const createToken=(id)=>
     expiresIn:maxAge
   })
 }
+
+const cookieOptions = {
+  httpOnly: true,
+  maxAge: maxAge * 1000,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
+};
 
 module.exports.signup_get = (req, res) => {
   res.send('signup request');
