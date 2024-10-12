@@ -39,7 +39,7 @@ module.exports.signup_get = (req, res) => {
 };
 module.exports.logout = (req, res) => {
     try{
-      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true ,secure: true, sameSite: 'None'}).status(200).json({ message: 'Logout successful' });
+      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true ,secure: false, sameSite: 'None'}).status(200).json({ message: 'Logout successful' });
     }
     catch(err)
     {
@@ -59,7 +59,7 @@ module.exports.signup_post = async (req, res) => {
     const user = await User.create({ firstName, lastName, email, userId, password });
   
     const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, secure: true, sameSite: 'None'});
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, secure: false, sameSite: 'None'});
     console.log('User Created successfully');
     res.status(201).json({ message: 'User created successfully', user: user._id });
   } catch (err) {
@@ -77,7 +77,7 @@ module.exports.login_post = async (req, res) => {
   { 
       const user=await User.login(email,password);
       const token=createToken(user._id);
-      res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000,secure: true, sameSite: 'None'})
+      res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000,secure: false, sameSite: 'None'})
       res.status(200).json({user: user._id})
   }
 
