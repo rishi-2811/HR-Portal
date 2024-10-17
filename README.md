@@ -1,6 +1,9 @@
 
 # 🏢 HR Portal
 
+## Deployed Link:-
+https://bluebirdhr.vercel.app/
+
 ## Overview
 The **HR Portal** is an advanced, user-friendly web application designed to streamline human resources operations by bridging communication between HR personnel and employees. With a focus on automation and centralized task management, the platform aims to replace manual processes with digital efficiency, enhancing productivity and minimizing paperwork.
 
