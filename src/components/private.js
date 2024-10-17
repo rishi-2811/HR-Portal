@@ -37,7 +37,10 @@ export const PrivateRoute = ({  children }) => {
      console.log(isAuthenticated)
   },[])
   if(loading){
-    return <Loading/>
+    return (<>
+       <h1>Please wait for atleast 100 seconds, as render automatically delays inactive server </h1>
+       <Loading/>
+    </>)
   }
 
 
