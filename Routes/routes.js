@@ -240,21 +240,6 @@ router.post('/api/deletecandidate',async (req,res)=>{
   }
 })
 
-router.post('/api/search',async(req,res)=>{
-  try {
-    const employees=await employee.find({
-      $or:[
-        {firstName:{$regex:req.body.input,$options:"i"}},
-        {lastName:{$regex:req.body.input,$options:"i"}},
-        {role:{$regex:req.body.input,$options:"i"}},
-        {department:{$regex:req.body.input,$options:"i"}}
-      ]
-    })
-    res.json(employees)
-  } catch (error) {
-    res.status(500)
-  }
-})
 
 
 module.exports = router;

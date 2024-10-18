@@ -48,7 +48,12 @@ module.exports.signup_get = (req, res) => {
 };
 module.exports.logout = (req, res) => {
     try{
-      res.cookie('jwt', '', { expires: new Date(0), httpOnly: true ,secure: false, sameSite: 'None'}).status(200).json({ message: 'Logout successful' });
+      res.cookie('jwt', '', { 
+        expires: new Date(0), 
+        httpOnly: true, 
+        secure: process.env.NODE_ENV === 'production', 
+        sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax' 
+    }).status(200).json({ message: 'Logout successful' });
     }
     catch(err)
     {
