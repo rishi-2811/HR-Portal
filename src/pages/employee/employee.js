@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function Employee(){
     const [employee,setemployee]=useState([])
+    const [filteredEmployees, setFilteredEmployees] = useState([])
     const [error,seterror]=useState("")
     const [loading,setloading]=useState(true)
     const fetchdata=async()=>{
@@ -16,16 +17,18 @@ export default function Employee(){
             const res=await fetch(api+'employees')
             const data=await res.json()
             setemployee(data)
+            setFilteredEmployees(data)
             setloading(false)
         } catch (error) {
             seterror("Error fetching data")
         }
     }
+    const filter=(employee)=>setFilteredEmployees(employee)
     useEffect(()=>{
         fetchdata()
         
     },[])
-    const employeemodel=employee.map((item)=>{
+    const employeemodel=filteredEmployees.map((item)=>{
         return (<EmployeeItem key={item.id} id={item.id} firstName={item.firstName} lastName={item.lastName} 
             role={item.role} department={item.department}
           mobile={item.mobile} email={item.email}/>)
@@ -33,7 +36,7 @@ export default function Employee(){
     return(
         <div className="container">
             <Navbar array={[false,true,false]}/>
-            <Header/>
+            <Header filter={filter} employee={employee}/>
             <div className="innerContainer" style={{flexDirection:"column"}}>
                 <Link to={'/addemployee'} className="addemp">
                     <img src="/logos/add.svg" alt="add employee"/>

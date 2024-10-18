@@ -9,6 +9,7 @@ import Loading from "../../components/Loading";
 
 export default function Candidates(){
     const [employee,setemployee]=useState([])
+    const [filteredEmployees, setFilteredEmployees] = useState([])
     const [error,seterror]=useState("")
     const [loading,setloading]=useState(true)
     const fetchdata=async()=>{
@@ -16,6 +17,7 @@ export default function Candidates(){
             const res=await fetch(api+'candidates')
             const data=await res.json()
             setemployee(data)
+            setFilteredEmployees(data)
             setloading(false)
         } catch (error) {
             seterror("Error fetching data")
@@ -25,7 +27,8 @@ export default function Candidates(){
         fetchdata()
         
     },[])
-    const employeemodel=employee.map((item)=>{
+    const filter=(employee)=>setFilteredEmployees(employee)
+    const employeemodel=filteredEmployees.map((item)=>{
         return (<CandidateItem key={item.id} id={item.id} firstName={item.firstName} lastName={item.lastName} 
             role={item.role} yes={item.interview.hasInterview}
           mobile={item.mobile} email={item.email}/>)
@@ -33,7 +36,7 @@ export default function Candidates(){
     return(
         <div className="container">
             <Navbar array={[false,false,true]}/>
-            <Header/>
+            <Header filter={filter} employee={employee}/>
             <div className="innerContainer" style={{flexDirection:"column"}}>
                {error ? <div className="error">{error}</div> : loading ? <Loading /> : employeemodel}
             </div>

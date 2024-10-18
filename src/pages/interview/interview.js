@@ -8,6 +8,7 @@ import Loading from "../../components/Loading";
 
 export default function Interview(){
     const [employee,setemployee]=useState([])
+    const [filteredEmployees, setFilteredEmployees] = useState([])
     const [error,seterror]=useState("")
     const [loading,setloading]=useState(true)
     const fetchdata=async()=>{
@@ -15,6 +16,7 @@ export default function Interview(){
             const res=await fetch(api+'candidateintscheduled')
             const data=await res.json()
             setemployee(data)
+            setFilteredEmployees(data)
             setloading(false)
         } catch (error) {
             seterror("Error fetching data")
@@ -24,7 +26,8 @@ export default function Interview(){
         fetchdata()
         
     },[])
-    const employeemodel=employee.map((item)=>{
+    const filter=(employee)=>setFilteredEmployees(employee)
+    const employeemodel=filteredEmployees.map((item)=>{
         return (<InterviewItem key={item.id} id={item.id} firstName={item.firstName} lastName={item.lastName} 
             role={item.role} date={item.interview.date}
             assignedTo={item.interview.assignedTo}/>)
@@ -32,7 +35,7 @@ export default function Interview(){
     return(
         <div className="container">
             <Navbar array={[false,false,false]}/>
-            <Header/>
+            <Header filter={filter} employee={employee}/>
             <div className="innerContainer" style={{flexDirection:"column"}}>
                {error ? <div className="error">{error}</div> : loading ? <Loading /> : employeemodel}
             </div>
